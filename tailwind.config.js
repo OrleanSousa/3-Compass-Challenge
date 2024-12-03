@@ -8,6 +8,12 @@ export default {
       fontFamily: {
         mont : 'Montserrat',
         Poppins: ['Poppins', 'sans-serif']
+      },
+      colors: {
+        black17: 'rgba(0, 0, 0, 0.17)',
+        gray50: '#9F9F9F',
+        black1: '#000000',
+        
       }
     },
     },
