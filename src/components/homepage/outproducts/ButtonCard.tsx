@@ -2,7 +2,8 @@ import React from 'react'
 
 const ButtonCard = () => {
   return (
-    <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+    <button className="border-buttonBord border w-[245px] h-[48px]
+     text-buttonBord font-semibold  self-center">
           Add to cart
     </button>
   )

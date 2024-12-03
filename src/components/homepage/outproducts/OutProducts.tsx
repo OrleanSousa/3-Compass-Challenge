@@ -1,35 +1,29 @@
-import React from 'react'
-import ProductCard from './CardProdutcs'
+import React from "react";
+import ProductCard from "./CardProdutcs";
+import products from "../../../assets/data/products.json"; // Importing JSON with products
+import ButtonCard from "./ButtonCard";
 
-
-const OutProducts = () => {
+const OutProducts: React.FC = () => {
   return (
-    <div className='flex justify-center flex-col w-[1236px] h-[1084px]'>
-            <h1 className='self-center font-bold text-[40px]'>Our Products</h1>
-        <div className="min-h-screen flex justify-center items-center gap-6 ">
-            <ProductCard
-                productName="Syltherine"
-                description="Stylish cafe chair"
-                price={2500000}
-                originalPrice={3500000}
-                discount={30}
-            />
-            <ProductCard
-                productName="Respira"
-                description="Outdoor bar table and stool"
-                price={500000}
-                isNew={true}
-            />
-            <ProductCard
-                productName="Lolito"
-                description="Luxury big sofa"
-                price={7000000}
-                originalPrice={14000000}
-                discount={50}
-            />
-        </div>
+    <div className="flex flex-col w-full max-w-[1236px] mx-auto">
+      <h1 className="self-center font-bold text-[40px] my-8">Our Products</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            productName={product.productName}
+            description={product.description}
+            originalPrice={product.originalPrice}   
+            price={product.price}
+            discount={product.discount}
+            isNew={product.isNew}
+            image={product.image}
+          />
+        ))}
+      </div>
+      <ButtonCard/>
     </div>
-  )
-}
+  );
+};
 
-export default OutProducts
+export default OutProducts;
