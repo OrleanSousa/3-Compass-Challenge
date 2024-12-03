@@ -1,0 +1,67 @@
+/* Footer.module.css */
+.container {
+    @apply w-[1440px] h-[505px] flex justify-center border-t-gray-500;
+  }
+  
+  .footerContent {
+    @apply w-[1240px] h-[419px] mt-[48px];
+  }
+  
+  .section {
+    @apply flex flex-row justify-between;
+  }
+  
+  .leftColumn {
+    @apply w-[285px] flex flex-col;
+  }
+  
+  .heading {
+    @apply font-bold text-2xl;
+  }
+  
+  .address {
+    @apply mt-[50px] text-gray50;
+  }
+  
+  .socialMedia {
+    @apply flex w-[184px] mt-[55px];
+  }
+  
+  .socialMediaList {
+    @apply flex justify-between w-[184px];
+  }
+  
+  .socialMediaItem {
+    @apply flex items-center justify-center shadow-lg w-[34px] h-[34px] rounded-full;
+  }
+  
+  .rightColumn {
+    @apply w-[710px] flex justify-between mb-[48px];
+  }
+  
+  .linksColumn,
+  .helpColumn {
+    @apply w-[68px] h-[312px];
+  }
+  
+  .linksList,
+  .helpList {
+    @apply h-[233px] flex flex-col justify-between;
+  }
+  
+  .newsletterColumn {
+    @apply flex flex-col justify-between w-[286px] h-[101px];
+  }
+  
+  .newsletterInput {
+    @apply w-full bg-transparent outline-none placeholder-gray-500;
+  }
+  
+  .newsletterButton {
+    @apply font-semibold border-b border-gray-400 text-right text-black1 uppercase;
+  }
+  
+  .footerBottom {
+    @apply border-t border-gray-300 mb-[35px];
+  }
+  

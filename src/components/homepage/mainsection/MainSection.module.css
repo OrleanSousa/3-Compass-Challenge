@@ -1,0 +1,29 @@
+/* MainSection.module.css */
+.container {
+    @apply w-[1440px] h-[717px] bg-backgroudHome pt-[157px] pl-[739px];
+  }
+  
+  .card {
+    @apply flex justify-center w-[643px] h-[443px] bg-backOrange items-center;
+  }
+  
+  .content {
+    @apply flex flex-col w-[561px] h-[344px] items-start;
+  }
+  
+  .title {
+    @apply text-textblack font-semibold;
+  }
+  
+  .heading {
+    @apply text-[52px] font-extrabold text-textOrange w-[403px];
+  }
+  
+  .description {
+    @apply w-[546px] text-textblack font-medium text-[18px];
+  }
+  
+  .button {
+    @apply bg-textOrange w-[222px] h-[74px] text-white font-bold mt-[46px];
+  }
+  

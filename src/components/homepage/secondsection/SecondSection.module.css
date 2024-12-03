@@ -1,0 +1,33 @@
+/* SecondSection.module.css */
+.container {
+    @apply flex flex-col text-center w-[1183px] h-[685px] mt-[56px] ml-[131px];
+  }
+  
+  .title {
+    @apply text-[32px] font-extrabold font-Poppins text-textblack;
+  }
+  
+  .subtitle {
+    @apply text-[20px] text-textgray;
+  }
+  
+  .listContainer {
+    @apply m-auto;
+  }
+  
+  .list {
+    @apply flex gap-[20px];
+  }
+  
+  .listItem {
+    @apply flex flex-col items-center;
+  }
+  
+  .image {
+    @apply w-[381px] h-[480px] mb-[30px];
+  }
+  
+  .text {
+    @apply font-semibold text-2xl;
+  }
+  
