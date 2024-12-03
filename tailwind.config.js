@@ -6,7 +6,8 @@ export default {
     extend: {
 
       fontFamily: {
-        mont : 'Montserrat'
+        mont : 'Montserrat',
+        Poppins: ['Poppins', 'sans-serif']
       }
     },
     },
