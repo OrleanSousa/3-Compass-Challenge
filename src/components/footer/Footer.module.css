@@ -41,12 +41,15 @@
   
   .linksColumn,
   .helpColumn {
-    @apply w-[68px] h-[312px];
+    @apply w-[140px] h-[312px];
   }
   
   .linksList,
   .helpList {
-    @apply h-[233px] flex flex-col justify-between;
+    @apply  h-[233px] flex flex-col justify-between;
+  }
+  .helpList{
+    @apply h-[163px]
   }
   
   .newsletterColumn {
