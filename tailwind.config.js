@@ -15,7 +15,8 @@ export default {
         black1: '#000000',
         backOrange: '#FFF3E3',
         textblack: '#333333',
-        textOrange: '#B88E2F'
+        textOrange: '#B88E2F',
+        textgray: '#666666'
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",

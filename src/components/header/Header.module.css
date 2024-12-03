@@ -1,10 +1,10 @@
 .navBar{
-    @apply flex flex-row w-[1440px] h-[96px] 
-    justify-center pt-[27px] pb-[28px] pr-[100px] pl-[50px] bg-white
+    @apply flex flex-row w-[1440px] min-h-[96px] 
+    justify-center pt-[27px] pb-[28px]
 }
 
 .containerNav{
-    @apply flex w-[1286px] h-[41px] items-center justify-between
+    @apply flex min-w-[1286px] min-h-[41px] items-center justify-between
 }
 
 .logoContainer{
@@ -20,7 +20,7 @@
 }
 
 .menuHeader{
-    @apply flex w-[430px] h-[23px] justify-around font-medium
+    @apply flex min-w-[430px] min-h-[23px] justify-around font-medium
 }
 
 .itemMenu {
