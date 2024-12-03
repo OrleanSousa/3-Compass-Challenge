@@ -66,11 +66,11 @@ const FeaturedCarousel = () => {
     >
       {slides.map((slide) => (
         <SplideSlide key={slide.id}>
-          <div className="relative w-[404px] h-[582px]">
+          <div className="relative w-[404px] h-[582px] overflow-hidden">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-[404px] h-[582px] object-cover"
+              className="w-[404px] h-[582px] object-cover "
             />
             <div className="absolute inset-0  flex flex-col justify-end ml-[24px] mb-[24px]">
                 <div className='flex flex-col justify-center items-center bg-white w-[217px] h-[130px]'>   

@@ -9,7 +9,7 @@ const Carousel = () => {
             <p className='w-[368px]'>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
             <button className='w-[176px] h-[48px] bg-buttonBord mt-[25px] text-white font-semibold'>Explore More</button>
         </div>
-        <div className='w-[1196px] h-[582px] flex ml-[42pxpx]'>
+        <div className='w-[1196px] h-[582px] flex ml-[42pxpx] overflow-hidden'>
             <FeaturedCarousel/>
         </div>
     </div>
