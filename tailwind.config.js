@@ -13,6 +13,10 @@ export default {
         black17: 'rgba(0, 0, 0, 0.17)',
         gray50: '#9F9F9F',
         black1: '#000000',
+        backOrange: '#FFF3E3'
+      },
+      backgroundImage: {
+        'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
         
       }
     },

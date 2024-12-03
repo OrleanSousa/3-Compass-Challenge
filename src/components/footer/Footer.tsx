@@ -6,7 +6,7 @@ import TwitterVector from '../../assets/twitterVector.svg'
 
 const Footer = () => {
   return (
-    <div className="w-[1440px] h-[505px] flex justify-center pr-[100px]">
+    <div className="w-[1440px] h-[505px] flex justify-center ">
       <div className="w-[1240px] h-[419px]">
         <div className='flex flex-row justify-between '>
           <div className='w-[285px] flex flex-col '>
