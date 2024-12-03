@@ -1,27 +1,52 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import foto1 from '../../../assets/foto1.png'
+import foto1 from '../../../assets/foto1.png'; // ajuste conforme o caminho real
+import traco from '../../../assets/traco.svg'; // ajuste conforme o caminho real
 
 const FeaturedCarousel = () => {
   const slides = [
     {
       id: 1,
-      title: "Stylish Cafe Chair",
+      title: "Inner Peace",
       description: "Modern and elegant chair for your cafe.",
-      image: {foto1},
+      image: foto1,
     },
     {
       id: 2,
-      title: "Luxury Sofa",
-      description: "Comfort and style for your living room.",
-      image: "https://via.placeholder.com/800x500?text=Product+2",
+      title: "Inner Peace",
+      description: "Comfortable and stylish living room design.",
+      image: foto1,
     },
     {
       id: 3,
-      title: "Minimalist Lamp",
-      description: "Perfect lighting for modern spaces.",
-      image: "https://via.placeholder.com/800x500?text=Product+3",
+      title: "Inner Peace",
+      description: "A serene workspace for productivity.",
+      image: foto1,
+    },
+    {
+      id: 4,
+      title: "Inner Peace",
+      description: "A fresh and vibrant kitchen layout.",
+      image: foto1,
+    },
+    {
+      id: 5,
+      title: "Inner Peace",
+      description: "A fresh and vibrant kitchen layout.",
+      image: foto1,
+    },
+    {
+      id: 6,
+      title: "Inner Peace",
+      description: "A fresh and vibrant kitchen layout.",
+      image: foto1,
+    },
+    {
+      id: 7,
+      title: "Inner Peace",
+      description: "A fresh and vibrant kitchen layout.",
+      image: foto1,
     },
   ];
 
@@ -31,25 +56,31 @@ const FeaturedCarousel = () => {
         pauseOnHover: true,
         arrows: true,
         pagination: true,
-        gap: '1rem',
+        gap: '24px',
+        perPage: 3,
+        perMove: 1,
+        rewind: true, // Isso garante o efeito infinito
       }}
       aria-label="Featured Products"
-      className="mx-auto max-w-auto"
+      className="mx-auto max-w-7xl"
     >
       {slides.map((slide) => (
         <SplideSlide key={slide.id}>
-          <div className="relative">
+          <div className="relative w-[404px] h-[582px]">
             <img
-              src={foto1}
+              src={slide.image}
               alt={slide.title}
-              className="w-full rounded-lg shadow-lg"
+              className="w-[404px] h-[582px] object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-start text-white p-6 rounded-lg">
-              <h2 className="text-2xl font-bold">{slide.title}</h2>
-              <p className="text-sm my-4">{slide.description}</p>
-              <button className="bg-orange-500 hover:bg-orange-600 text-sm py-2 px-4 rounded transition-all">
-                Shop Now
-              </button>
+            <div className="absolute inset-0  flex flex-col justify-end ml-[24px] mb-[24px]">
+                <div className='flex flex-col justify-center items-center bg-white w-[217px] h-[130px]'>   
+                    <div className="flex items-center gap-2 text-textMid ">
+                        <span className="text-lg font-medium">01</span>
+                        <img src={traco} alt="separador" className="w-6 h-1" />
+                        <span className="text-lg font-medium">Bed Room</span>
+                    </div>
+                    <h2 className="text-[28px] font-semibold mt-2">{slide.title}</h2>
+                </div>
             </div>
           </div>
         </SplideSlide>
