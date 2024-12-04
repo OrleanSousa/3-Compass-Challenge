@@ -25,6 +25,7 @@ export default {
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
+        'backSubHeader' : "url('./src/assets/back-Sub-Header.png')"
         
       }
     },
