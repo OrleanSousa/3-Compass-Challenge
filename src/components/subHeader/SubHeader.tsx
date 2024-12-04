@@ -14,7 +14,7 @@ const SubHeader: React.FC<SubHeaderProps> = ({
   logo 
 }) => {
   return (
-    <div className='bg-backSubHeader w-[1440px] h-[316px] flex flex-col justify-center items-center'>
+    <div className='bg-backSubHeader w-[1440px] h-[316px] flex flex-col justify-center items-center '>
       {logo && (
         <img 
           src={logo} 

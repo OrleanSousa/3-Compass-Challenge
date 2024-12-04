@@ -21,7 +21,8 @@ export default {
         textcard : "#3a3a3a",
         buttonBord: '#B88E2F',
         carouselback: "#FCF8F3",
-        textMid: "#616161"
+        textMid: "#616161",
+        backFilter: "#F9F1E7"
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
