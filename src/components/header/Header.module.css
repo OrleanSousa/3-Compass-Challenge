@@ -1,7 +1,7 @@
 /* Header.module.css */
 
 .header {
-  @apply flex justify-center w-[1440px] min-h-[96px] py-[28px] border-b border-gray-500;
+  @apply flex justify-center w-[1440px] min-h-[96px] py-[28px] ;
 }
 
 .container {

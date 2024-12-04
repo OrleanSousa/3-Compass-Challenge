@@ -626,6 +626,10 @@ video {
   top: 24px;
 }
 
+.m-auto{
+  margin: auto;
+}
+
 .mx-\[102px\]{
   margin-left: 102px;
   margin-right: 102px;
@@ -639,6 +643,10 @@ video {
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.-mb-2{
+  margin-bottom: -0.5rem;
 }
 
 .mb-2{
@@ -749,12 +757,36 @@ video {
   margin-top: 72px;
 }
 
-.mb-4{
-  margin-bottom: 1rem;
+.mt-\[46px\]{
+  margin-top: 46px;
 }
 
-.-mb-2{
-  margin-bottom: -0.5rem;
+.ml-\[23px\]{
+  margin-left: 23px;
+}
+
+.mr-6{
+  margin-right: 1.5rem;
+}
+
+.mr-7{
+  margin-right: 1.75rem;
+}
+
+.mr-\[30px\]{
+  margin-right: 30px;
+}
+
+.mr-\[23px\]{
+  margin-right: 23px;
+}
+
+.ml-\[6px\]{
+  margin-left: 6px;
+}
+
+.ml-\[12px\]{
+  margin-left: 12px;
 }
 
 .flex{
@@ -775,6 +807,10 @@ video {
 
 .h-4{
   height: 1rem;
+}
+
+.h-\[100px\]{
+  height: 100px;
 }
 
 .h-\[130px\]{
@@ -805,6 +841,10 @@ video {
   height: 312px;
 }
 
+.h-\[316px\]{
+  height: 316px;
+}
+
 .h-\[323px\]{
   height: 323px;
 }
@@ -833,6 +873,10 @@ video {
   height: 48px;
 }
 
+.h-\[50px\]{
+  height: 50px;
+}
+
 .h-\[582px\]{
   height: 582px;
 }
@@ -849,20 +893,24 @@ video {
   height: ;
 }
 
-.h-\[316px\]{
-  height: 316px;
+.h-\[36px\]{
+  height: 36px;
 }
 
-.h-\[64px\]{
-  height: 64px;
+.h-\[17px\]{
+  height: 17px;
 }
 
-.h-\[77px\]{
-  height: 77px;
+.h-\[30px\]{
+  height: 30px;
 }
 
-.h-\[50px\]{
-  height: 50px;
+.h-\[37px\]{
+  height: 37px;
+}
+
+.h-\[55px\]{
+  height: 55px;
 }
 
 .w-4{
@@ -949,20 +997,40 @@ video {
   width: 48px;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-full{
   width: 100%;
 }
 
-.w-\[64px\]{
-  width: 64px;
+.w-\[\]{
+  width: ;
 }
 
-.w-\[77px\]{
-  width: 77px;
+.w-\[237px\]{
+  width: 237px;
 }
 
-.w-\[50px\]{
-  width: 50px;
+.w-\[20px\]{
+  width: 20px;
+}
+
+.w-\[85px\]{
+  width: 85px;
+}
+
+.w-\[55px\]{
+  width: 55px;
+}
+
+.w-\[188px\]{
+  width: 188px;
+}
+
+.w-\[288px\]{
+  width: 288px;
 }
 
 .max-w-7xl{
@@ -989,6 +1057,10 @@ video {
   flex-direction: column;
 }
 
+.items-end{
+  align-items: flex-end;
+}
+
 .items-center{
   align-items: center;
 }
@@ -1005,6 +1077,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-around{
+  justify-content: space-around;
+}
+
 .gap-2{
   gap: 0.5rem;
 }
@@ -1017,12 +1093,24 @@ video {
   gap: 1.5rem;
 }
 
+.gap-\[6px\]{
+  gap: 6px;
+}
+
 .gap-\[\]{
   gap: ;
 }
 
-.gap-\[6px\]{
-  gap: 6px;
+.gap-\[17px\]{
+  gap: 17px;
+}
+
+.gap-\[29px\]{
+  gap: 29px;
+}
+
+.gap-y-2{
+  row-gap: 0.5rem;
 }
 
 .self-center{
@@ -1049,6 +1137,10 @@ video {
   border-top-width: 1px;
 }
 
+.border-l{
+  border-left-width: 1px;
+}
+
 .border-buttonBord{
   --tw-border-opacity: 1;
   border-color: rgb(184 142 47 / var(--tw-border-opacity, 1));
@@ -1062,6 +1154,16 @@ video {
 .border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
+}
+
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+
+.border-gray50{
+  --tw-border-opacity: 1;
+  border-color: rgb(159 159 159 / var(--tw-border-opacity, 1));
 }
 
 .bg-backcard{
@@ -1094,6 +1196,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-backFilter{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 241 231 / var(--tw-bg-opacity, 1));
+}
+
 .bg-backSubHeader{
   background-image: url('./src/assets/back-Sub-Header.png');
 }
@@ -1122,6 +1229,11 @@ video {
   padding-bottom: 44px;
 }
 
+.px-\[100px\]{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .pl-\[100px\]{
   padding-left: 100px;
 }
@@ -1134,6 +1246,18 @@ video {
   text-align: start;
 }
 
+.text-end{
+  text-align: end;
+}
+
+.align-middle{
+  vertical-align: middle;
+}
+
+.text-\[16px\]{
+  font-size: 16px;
+}
+
 .text-\[20px\]{
   font-size: 20px;
 }
@@ -1144,6 +1268,10 @@ video {
 
 .text-\[40px\]{
   font-size: 40px;
+}
+
+.text-\[48px\]{
+  font-size: 48px;
 }
 
 .text-lg{
@@ -1161,14 +1289,6 @@ video {
   line-height: 1.75rem;
 }
 
-.text-\[48px\]{
-  font-size: 48px;
-}
-
-.text-\[16px\]{
-  font-size: 16px;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -1179,10 +1299,6 @@ video {
 
 .font-semibold{
   font-weight: 600;
-}
-
-.font-light{
-  font-weight: 300;
 }
 
 .text-buttonBord{
