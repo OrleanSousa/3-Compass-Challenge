@@ -653,6 +653,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .mb-\[24px\]{
   margin-bottom: 24px;
 }
@@ -771,10 +775,6 @@ video {
 
 .mt-\[72px\]{
   margin-top: 72px;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
 }
 
 .flex{
@@ -917,6 +917,10 @@ video {
   width: 188px;
 }
 
+.w-\[202px\]{
+  width: 202px;
+}
+
 .w-\[217px\]{
   width: 217px;
 }
@@ -931,6 +935,10 @@ video {
 
 .w-\[24px\]{
   width: 24px;
+}
+
+.w-\[252px\]{
+  width: 252px;
 }
 
 .w-\[258px\]{
@@ -1065,6 +1073,14 @@ video {
   gap: 29px;
 }
 
+.gap-\[2px\]{
+  gap: 2px;
+}
+
+.gap-\[3px\]{
+  gap: 3px;
+}
+
 .gap-\[6px\]{
   gap: 6px;
 }
@@ -1126,9 +1142,9 @@ video {
   background-color: rgb(249 241 231 / var(--tw-bg-opacity, 1));
 }
 
-.bg-backcard{
+.bg-black{
   --tw-bg-opacity: 1;
-  background-color: rgb(244 245 247 / var(--tw-bg-opacity, 1));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
 .bg-buttonBord{
@@ -1139,6 +1155,11 @@ video {
 .bg-carouselback{
   --tw-bg-opacity: 1;
   background-color: rgb(252 248 243 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-500{
@@ -1154,16 +1175,6 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-60{
@@ -1188,6 +1199,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-\[100px\]{
   padding-left: 100px;
   padding-right: 100px;
@@ -1198,19 +1214,14 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-\[44px\]{
-  padding-top: 44px;
-  padding-bottom: 44px;
-}
-
-.px-6{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-\[44px\]{
+  padding-top: 44px;
+  padding-bottom: 44px;
 }
 
 .pl-\[100px\]{
@@ -1231,6 +1242,10 @@ video {
 
 .text-\[20px\]{
   font-size: 20px;
+}
+
+.text-\[24px\]{
+  font-size: 24px;
 }
 
 .text-\[28px\]{
@@ -1272,6 +1287,11 @@ video {
   font-weight: 600;
 }
 
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .text-buttonBord{
   --tw-text-opacity: 1;
   color: rgb(184 142 47 / var(--tw-text-opacity, 1));
@@ -1302,9 +1322,9 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.text-black{
+.text-textCardB{
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+  color: rgb(137 137 137 / var(--tw-text-opacity, 1));
 }
 
 .line-through{

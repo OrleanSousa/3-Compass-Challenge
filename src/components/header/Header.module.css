@@ -1,7 +1,7 @@
 /* Header.module.css */
 
 .header {
-  @apply flex justify-center w-[1440px] min-h-[96px] py-[28px] ;
+  @apply flex justify-center w-[1440px] h-[96px] py-[28px] ;
 }
 
 .container {
@@ -21,7 +21,7 @@
 }
 
 .menu {
-  @apply flex gap-8 text-[16px] font-medium;
+  @apply flex justify-between w-[430px] h-[23px] text-[16px] font-medium;
 }
 
 .menuItem {
