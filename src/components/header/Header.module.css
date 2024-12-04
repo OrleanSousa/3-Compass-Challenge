@@ -1,30 +1,37 @@
-/* NavBar.module.css */
+/* Header.module.css */
 
-.navBar {
-    @apply flex flex-row w-[1440px] min-h-[96px] justify-center pt-[27px] pb-[28px];
-  }
-  
-  .containerNav {
-    @apply flex min-w-[1286px] min-h-[41px] items-center justify-between;
-  }
-  
-  .logoContainer {
-    @apply flex items-center gap-1;
-  }
-  
-  .icon {
-    @apply flex items-center gap-1;
-  }
-  
-  .nameShop {
-    @apply font-bold text-[34px] font-mont;
-  }
-  
-  .menuHeader {
-    @apply flex min-w-[430px] justify-around font-medium;
-  }
-  
-  .itemMenu {
-    @apply hover:underline text-[16px];
-  }
-  
+.header {
+  @apply flex justify-center w-[1440px] min-h-[96px] py-[28px] border-b border-gray-500;
+}
+
+.container {
+  @apply flex justify-between items-center w-full max-w-[1286px];
+}
+
+.logoContainer {
+  @apply flex items-center gap-2;
+}
+
+.logoImage {
+  @apply w-[34px] h-[34px];
+}
+
+.logoText {
+  @apply font-bold text-[34px];
+}
+
+.menu {
+  @apply flex gap-8 text-[16px] font-medium;
+}
+
+.menuItem {
+  @apply hover:underline;
+}
+
+.icons {
+  @apply flex gap-[35px];
+}
+
+.icon {
+  @apply w-[24px] h-[24px];
+}

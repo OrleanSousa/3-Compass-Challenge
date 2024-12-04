@@ -2,7 +2,7 @@ import FeaturedCarousel from './CarouselItem'
 
 const Carousel = () => {
   return (
-    <div className='bg-carouselback h-[670px] mt-[69px] flex pl-[100px] py-[44px] items-center '>
+    <div className='bg-carouselback w-[1440px] h-[670px] mt-[69px] flex pl-[100px] py-[44px] items-center '>
         <div className='w-[422px]h-[151px] mr-[42px]'>
             <h2 className='text-[40px] w-[422px] font-bold text-textMid'>50+ Beautiful rooms 
             inspiration</h2>

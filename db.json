@@ -1,0 +1,18 @@
+{
+    "slides": [
+      {
+        "id": 1,
+        "title": "Inner Peace",
+        "description": "Modern and elegant chair for your cafe.",
+        "image": "http://localhost:5000/assets/table.svg"
+      },
+      {
+        "id": 2,
+        "title": "Inner Peace",
+        "description": "Comfortable and stylish living room design.",
+        "image": "http://localhost:5000/assets/foto1.png"
+      }
+      
+    ]
+  }
+  

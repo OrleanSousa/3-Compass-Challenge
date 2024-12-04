@@ -1,4 +1,3 @@
-import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import foto1 from '../../../assets/foto1.png'; // ajuste conforme o caminho real
@@ -59,7 +58,7 @@ const FeaturedCarousel = () => {
         gap: '24px',
         perPage: 3,
         perMove: 1,
-        rewind: true, // Isso garante o efeito infinito
+        rewind: true, 
       }}
       aria-label="Featured Products"
       className="mx-auto max-w-7xl"

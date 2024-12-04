@@ -1,6 +1,6 @@
 /* SecondSection.module.css */
 .container {
-    @apply flex flex-col text-center w-[1183px] h-[685px] mt-[56px] ml-[131px];
+    @apply flex flex-col text-center w-[1183px] h-[685px] mt-[56px] ml-[131px] mr-[126px];
   }
   
   .title {
