@@ -10,7 +10,7 @@ import img9 from '../../../assets/gallery/Rectangle 45.png'
 
 const Gallery = () => {
   return (
-    <div className='flex flex-col mt-[67px] w-[1440px] h-[780px] overflow-hidden'>
+    <div className='flex flex-col mt-[67px] mb-[58px] w-[1440px] h-[780px] overflow-hidden'>
         <div>
             <p className='text-center mb-2 font-semibold text-xl text-textMid'>Share your setup with</p>
             <h2 className='text-center text-[40px] font-bold'>#FuniroFurniture</h2>

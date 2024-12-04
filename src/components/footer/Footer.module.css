@@ -1,7 +1,8 @@
 /* Footer.module.css */
 .container {
-    @apply w-[1440px] h-[505px] flex justify-center border-t-gray-500;
-  }
+  @apply w-[1440px] h-[505px] flex justify-center border-t-[1px] border-t-gray-300;
+}
+
   
   .footerContent {
     @apply w-[1240px] h-[419px] mt-[48px];
