@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "./CardProdutcs";
+import ProductCard from "../../card-product/CardProdutcs";
 import products from "../../../assets/data/products.json"; // Importing JSON with products
 import ButtonCard from "./ButtonCard";
 

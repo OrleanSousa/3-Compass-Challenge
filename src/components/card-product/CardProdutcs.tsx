@@ -1,4 +1,4 @@
-import card1 from '../../../assets/table2.svg'
+import card1 from '../../assets/foto1.png'
 
 import React from "react";
 
