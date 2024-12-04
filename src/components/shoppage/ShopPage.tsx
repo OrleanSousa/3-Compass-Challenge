@@ -10,11 +10,21 @@ const ShopPages = () => {
   // Estado para controlar o número de produtos exibidos
   const [productLimit, setProductLimit] = useState(16);
 
+  // Estado para controlar a página atual
+  const [currentPage, setCurrentPage] = useState(1);
+
   // Função para lidar com mudanças no input
   const handleProductLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
     if (!isNaN(value) && value > 0) {
       setProductLimit(value); // Atualiza o estado com o valor digitado
+    }
+  };
+
+  // Função para ir para a próxima página
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= Math.ceil(products.length / productLimit)) {
+      setCurrentPage(page);
     }
   };
 
@@ -34,7 +44,7 @@ const ShopPages = () => {
             <MdOutlineViewDay size={19} />
           </div>
           <div className='flex items-center justify-end border-l border-gray50 w-[237px] h-[37px]'>
-            <p className="text-[16px] font-semibold">Showing 1–{Math.min(productLimit, products.length)} of {products.length} results</p>
+            <p className="text-[16px] font-semibold">Showing {(currentPage - 1) * productLimit + 1}–{Math.min(currentPage * productLimit, products.length)} of {products.length} results</p>
           </div>
         </div>
         <div className="flex flex-row gap-[29px]">
@@ -43,20 +53,20 @@ const ShopPages = () => {
             <input 
               type="number" 
               placeholder="16" 
-              className="w-[55px] h-[55px] text-center"
+              className="w-[55px] h-[55px] text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" 
               value={productLimit} 
               onChange={handleProductLimitChange} 
             />
           </div>
-          <div className='flex  items-center gap-[17px]'>
+          <div className='flex items-center gap-[17px]'>
             <p className="text-[20px] text-start">Sort by</p>
             <input type="text" placeholder="Default" className="w-[188px] h-[55px] text-center" />
           </div>
         </div>
       </div>
-      <div className='mt-[46px] flex justify-center'>
+      <div className='mt-[46px] flex justify-center '>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.slice(0, productLimit).map((product) => (
+          {products.slice((currentPage - 1) * productLimit, currentPage * productLimit).map((product) => (
             <ProductCard
               key={product.id}
               productName={product.productName}
@@ -70,7 +80,26 @@ const ShopPages = () => {
           ))}
         </div>
       </div>
-      
+      <div className='flex m-auto justify-between w-[392px] h-[90px] items-end mb-[85px]'>
+        {/* Botões de paginação */}
+        {[1, 2, 3].map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`w-[60px] h-[60px] rounded-[10px] ${
+              currentPage === page ? 'bg-buttonBord' : 'bg-buttonShop'
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          className='bg-buttonShop w-[98px] h-[60px] rounded-[10px]'
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 };

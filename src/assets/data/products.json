@@ -278,5 +278,134 @@
     "price": 500000,
     "isNew": true,
     "image": "./images/table2.svg"
+  },
+  {
+    "id": 33,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 34,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 35,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 36,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  }
+  ,
+  {
+    "id": 37,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 38,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 39,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 40,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 41,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 42,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 43,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 44,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 45,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 46,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 47,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
+  },
+  {
+    "id": 48,
+    "productName": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "isNew": true,
+    "image": "./images/table2.svg"
   }
 ]
