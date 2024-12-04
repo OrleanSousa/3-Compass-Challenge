@@ -610,6 +610,66 @@ video {
   top: 24px;
 }
 
+.-right-12{
+  right: -3rem;
+}
+
+.top-1\/2{
+  top: 50%;
+}
+
+.bottom-\[-24px\]{
+  bottom: -24px;
+}
+
+.right-\[-24px\]{
+  right: -24px;
+}
+
+.bottom-\[\]{
+  bottom: ;
+}
+
+.bottom-\[-\]{
+  bottom: -;
+}
+
+.bottom-\[-20px\]{
+  bottom: -20px;
+}
+
+.bottom-\[px\]{
+  bottom: px;
+}
+
+.bottom-\[24px\]{
+  bottom: 24px;
+}
+
+.bottom-\[1\/2px\]{
+  bottom: 1/2px;
+}
+
+.bottom-\[10px\]{
+  bottom: 10px;
+}
+
+.bottom-\[5px\]{
+  bottom: 5px;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.right-\[-48px\]{
+  right: -48px;
+}
+
 .mx-\[102px\]{
   margin-left: 102px;
   margin-right: 102px;
@@ -669,6 +729,18 @@ video {
   margin-top: 69px;
 }
 
+.mr-\[\]{
+  margin-right: ;
+}
+
+.mr-\[-48px\]{
+  margin-right: -48px;
+}
+
+.ml-\[-241px\]{
+  margin-left: -241px;
+}
+
 .flex{
   display: flex;
 }
@@ -719,6 +791,10 @@ video {
 
 .h-\[670px\]{
   height: 670px;
+}
+
+.h-\[24px\]{
+  height: 24px;
 }
 
 .w-4{
@@ -777,6 +853,10 @@ video {
   width: 100%;
 }
 
+.w-\[24px\]{
+  width: 24px;
+}
+
 .max-w-7xl{
   max-width: 80rem;
 }
@@ -789,8 +869,17 @@ video {
   flex: 1 1 0%;
 }
 
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-row{
+  flex-direction: row;
 }
 
 .flex-col{
@@ -825,8 +914,16 @@ video {
   gap: 1.5rem;
 }
 
+.self-end{
+  align-self: flex-end;
+}
+
 .self-center{
   align-self: center;
+}
+
+.self-baseline{
+  align-self: baseline;
 }
 
 .overflow-hidden{
@@ -894,6 +991,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-orange-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 247 237 / var(--tw-bg-opacity, 1));
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -924,6 +1026,10 @@ video {
 
 .text-start{
   text-align: start;
+}
+
+.align-baseline{
+  vertical-align: baseline;
 }
 
 .text-\[20px\]{
@@ -988,6 +1094,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .line-through{

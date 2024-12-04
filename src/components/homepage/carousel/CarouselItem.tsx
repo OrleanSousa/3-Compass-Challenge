@@ -1,7 +1,8 @@
+import seta from '../../../assets/seta.svg';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import foto1 from '../../../assets/foto1.png'; // ajuste conforme o caminho real
-import traco from '../../../assets/traco.svg'; // ajuste conforme o caminho real
+import foto1 from '../../../assets/foto1.png';
+import traco from '../../../assets/traco.svg';
 
 const FeaturedCarousel = () => {
   const slides = [
@@ -53,33 +54,39 @@ const FeaturedCarousel = () => {
     <Splide
       options={{
         pauseOnHover: true,
-        arrows: true,
+        arrows: true, // Habilita as setas
         pagination: true,
         gap: '24px',
         perPage: 3,
         perMove: 1,
-        rewind: true, 
+        rewind: true,
       }}
       aria-label="Featured Products"
       className="mx-auto max-w-7xl"
     >
       {slides.map((slide) => (
         <SplideSlide key={slide.id}>
-          <div className="relative w-[404px] h-[582px] overflow-hidden">
+          <div className="relative w-[404px] h-[582px]">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-[404px] h-[582px] object-cover "
+              className="w-[404px] h-[582px] object-cover"
             />
-            <div className="absolute inset-0  flex flex-col justify-end ml-[24px] mb-[24px]">
-                <div className='flex flex-col justify-center items-center bg-white w-[217px] h-[130px]'>   
-                    <div className="flex items-center gap-2 text-textMid ">
-                        <span className="text-lg font-medium">01</span>
-                        <img src={traco} alt="separador" className="w-6 h-1" />
-                        <span className="text-lg font-medium">Bed Room</span>
-                    </div>
-                    <h2 className="text-[28px] font-semibold mt-2">{slide.title}</h2>
+            <div className="absolute inset-0 flex flex-col justify-end ml-[24px] mb-[24px]">
+              <div className="relative flex flex-col justify-center items-center bg-white w-[217px] h-[130px]">
+                <div className="flex items-center gap-2 text-textMid">
+                  <span className="text-lg font-medium">01</span>
+                  <img src={traco} alt="separador" className="w-6 h-1" />
+                  <span className="text-lg font-medium">Bed Room</span>
                 </div>
+                <h2 className="text-[28px] font-semibold mt-2">{slide.title}</h2>
+                <div
+                  className="bg-buttonBord absolute w-[48px] h-[48px] flex 
+                justify-center items-center bottom-0 right-[-48px]"
+                >
+                  <img src={seta} alt="" className="w-[24px] h-[24px]" />
+                </div>
+              </div>
             </div>
           </div>
         </SplideSlide>
