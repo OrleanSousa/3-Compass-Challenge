@@ -1,4 +1,7 @@
 import card1 from '../../assets/foto1.png';
+import { IoMdShare } from "react-icons/io";
+import { TbArrowsLeftRight } from "react-icons/tb";
+import { FaRegHeart } from "react-icons/fa";
 
 import React from 'react';
 
@@ -40,21 +43,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       </div>
 
-      {/* Informações no hover */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300">
-        <button className="bg-white text-black px-6 py-2 text-sm font-semibold rounded-full mb-4">
+      {/*hover */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center 
+      items-center transition-opacity duration-300">
+        <button className="bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px]">
           Add to cart
         </button>
-        <div className="flex gap-4 text-white text-sm">
-          <span className="cursor-pointer">Share</span>
-          <span className="cursor-pointer">Compare</span>
-          <span className="cursor-pointer">Like</span>
+        <div className="flex font-semibold text-white text-[16px] justify-between w-[252px] h-[24px]">
+          <span className="cursor-pointer flex items-center gap-[2px]"><IoMdShare size={16}/>Share</span>
+          <span className="cursor-pointer flex items-center gap-[3px]"> <TbArrowsLeftRight size={16}/>Compare</span>
+          <span className="cursor-pointer flex items-center gap-[3px]"> <FaRegHeart size={16}/>Like</span>
         </div>
       </div>
 
       <div className="p-4 text-start bg-gray-100">
-        <h3 className="text-lg font-semibold">{productName}</h3>
-        <p className="text-sm text-gray-500 mt-1">{description}</p>
+        <h3 className="text-[24px] font-semibold text-textcard">{productName}</h3>
+        <p className="text-[16px] text-textCardB mt-1">{description}</p>
         <div className="mt-2">
           <span className="text-black text-[20px] font-bold">
             Rp {price.toLocaleString()}
