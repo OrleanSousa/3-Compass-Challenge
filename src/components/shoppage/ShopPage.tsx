@@ -6,20 +6,15 @@ import ProductCard from '../card-product/CardProdutcs';
 import products from "../../assets/data/products.json";
 import { MdOutlineViewDay } from "react-icons/md";
 
+// Importando o hook customizado
+import useProductLimit from '../../hooks/useProductLimit';
+
 const ShopPages = () => {
-  // Estado para controlar o número de produtos exibidos
-  const [productLimit, setProductLimit] = useState(16);
-
   // Estado para controlar a página atual
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
-  // Função para lidar com mudanças no input
-  const handleProductLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    if (!isNaN(value) && value > 0) {
-      setProductLimit(value); // Atualiza o estado com o valor digitado
-    }
-  };
+  // Usando o hook customizado para controlar o limite de produtos
+  const { productLimit, handleProductLimitChange } = useProductLimit(16);
 
   // Função para ir para a próxima página
   const handlePageChange = (page: number) => {
