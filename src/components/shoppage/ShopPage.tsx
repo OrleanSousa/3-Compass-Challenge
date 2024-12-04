@@ -8,7 +8,7 @@ import { MdOutlineViewDay } from "react-icons/md";
 
 const ShopPages = () => {
   // Estado para controlar o número de produtos exibidos
-  const [productLimit, setProductLimit] = useState(8);
+  const [productLimit, setProductLimit] = useState(16);
 
   // Função para lidar com mudanças no input
   const handleProductLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +56,6 @@ const ShopPages = () => {
       </div>
       <div className='mt-[46px] flex justify-center'>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Filtra os produtos com base no limite definido */}
           {products.slice(0, productLimit).map((product) => (
             <ProductCard
               key={product.id}
