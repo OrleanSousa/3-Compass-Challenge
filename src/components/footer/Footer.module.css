@@ -33,8 +33,9 @@
   }
   
   .socialMediaItem {
-    @apply flex items-center justify-center shadow-lg w-[34px] h-[34px] rounded-full;
+    @apply flex items-center justify-center shadow-lg w-[34px] h-[34px] rounded-full cursor-pointer;
   }
+  
   
   .rightColumn {
     @apply w-[710px] flex justify-between mb-[48px];
@@ -69,3 +70,6 @@
     @apply border-t border-gray-300 mb-[35px];
   }
   
+  a {
+    @apply hover:underline text-gray-700 hover:text-black1;
+  }
