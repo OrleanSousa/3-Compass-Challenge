@@ -8,7 +8,7 @@ const OutProducts: React.FC = () => {
     <div className="flex flex-col w-full max-w-[1236px] mx-[102px]">
       <h1 className="self-center font-bold text-[40px] my-8">Our Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products.slice(0, 8).map((product) => (
           <ProductCard
             key={product.id}
             productName={product.productName}
@@ -19,7 +19,7 @@ const OutProducts: React.FC = () => {
             isNew={product.isNew}
             image={product.image}
           />
-        ))}
+        ))}   
       </div>
       <ButtonCard/>
     </div>
