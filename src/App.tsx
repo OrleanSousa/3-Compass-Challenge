@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Contacts from './pages/Contact'
-import Cart from './components/cartPage/Cartpage'
 import Shop from './pages/Shop'
 import CheckOut from './pages/CheckOut'
 import Product from './pages/Product'
+import Cart from './pages/Cart'
 
 function App() {
 
