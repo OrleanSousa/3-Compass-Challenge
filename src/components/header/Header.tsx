@@ -4,7 +4,7 @@ import logoSite from '../../assets/logosite.svg';
 import userVeto from '../../assets/userVetor.svg';
 import cardVetor from '../../assets/cartVetor.svg';
 import { Link } from 'react-router-dom';
-import CartModal from './Modal'; // Importar o modal
+import CartModal from '../modal/Modal'; // Importar o modal
 
 const Header: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
