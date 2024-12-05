@@ -3,7 +3,9 @@
 const SingleProduct = () => {
   return (
     <>
+
     qualquer coisa
+
     </>
   )
 }
