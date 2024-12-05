@@ -3,25 +3,43 @@ import card1 from '../../assets/foto1.png';
 import { IoMdShare } from "react-icons/io";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
+import { useCart } from '../../hooks/useCart'; // Importando o hook de carrinho
 
 interface ProductCardProps {
+  id: string;              // Adicionando o id como obrigatório
   productName: string;
   description: string;
   price: number;
   originalPrice?: number;
   discount?: number;
   isNew?: boolean;
-  image?: string;
+  image?: string;          // A imagem continua sendo opcional
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   productName,
   description,
   price,
-  originalPrice = 0, // Definir valor padrão para originalPrice
+  originalPrice = 0,
   discount,
   isNew,
+  image = card1, // Usamos uma imagem padrão caso nenhuma seja fornecida
 }) => {
+  const { addToCart } = useCart(); // Usando o hook de carrinho
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,               // Passando o 'id' para a função addToCart
+      name: productName, // Agora passando o 'productName'
+      productName,
+      description,
+      price,
+      image,
+      quantity: 1,      // Quantidade padrão de 1 item
+    });
+  };
+
   return (
     <div className="relative bg-white overflow-hidden w-[285px] h-[446px] group">
       <div className="relative">
@@ -36,22 +54,35 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </span>
         )}
         <img
-          src={card1}
+          src={card1}  // Usando a prop 'image' corretamente
           alt={productName}
           className="w-[285px] h-[301px] object-cover"
         />
       </div>
 
       {/* hover */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center 
-      items-center transition-opacity duration-300">
-        <button className="bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px]">
+      <div
+        className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300"
+      >
+        <button
+          onClick={handleAddToCart}
+          className="bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px]"
+        >
           Add to cart
         </button>
         <div className="flex font-semibold text-white text-[16px] justify-between w-[252px] h-[24px]">
-          <span className="cursor-pointer flex items-center gap-[2px]"><IoMdShare size={16}/>Share</span>
-          <span className="cursor-pointer flex items-center gap-[3px]"> <TbArrowsLeftRight size={16}/>Compare</span>
-          <span className="cursor-pointer flex items-center gap-[3px]"> <FaRegHeart size={16}/>Like</span>
+          <span className="cursor-pointer flex items-center gap-[2px]">
+            <IoMdShare size={16} />
+            Share
+          </span>
+          <span className="cursor-pointer flex items-center gap-[3px]">
+            <TbArrowsLeftRight size={16} />
+            Compare
+          </span>
+          <span className="cursor-pointer flex items-center gap-[3px]">
+            <FaRegHeart size={16} />
+            Like
+          </span>
         </div>
       </div>
 

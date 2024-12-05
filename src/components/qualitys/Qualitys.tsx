@@ -7,7 +7,7 @@ const Qualitys = () => {
   return (
     <div className='flex justify-center items-center bg-qualitback w-[1440px] h-[270px]'>
         <div className='flex w-[1344px] h-[70px] justify-between'>
-            <div className='flex items-center gap-[10px]'>
+            <div className='flex items-center gap-[10px] '>
                 <img src={trophy} alt="" className='w-[52.77px] h-[60px]'/>
                 <div>
                     <h2 className='text-[25px] font-semibold text-textqualit'>High Quality</h2>
@@ -31,8 +31,8 @@ const Qualitys = () => {
             <div className='flex items-center gap-[10px]'>
                 <img src={suport} alt="" className='w-[52.94px] h-[60px]'/>
                 <div>
-                    <h2 className='text-[25px] font-semibold text-textqualit'>High Quality</h2>
-                    <p className='text-textCardB text-[20px]'>crafted from top materials</p>
+                    <h2 className='text-[25px] font-semibold text-textqualit'>24 / 7 Support</h2>
+                    <p className='text-textCardB text-[20px]'>Dedicated support</p>
                 </div>
             </div>
         </div>
