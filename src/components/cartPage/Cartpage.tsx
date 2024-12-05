@@ -1,17 +1,18 @@
-import React from 'react'
 import Header from '../header/Header'
 import SubHeader from '../subHeader/SubHeader'
 import logoSite from '../../assets/logosite.svg';
 import Footer from '../footer/Footer';
+import Qualitys from '../qualitys/Qualitys';
 
-const Cart = () => {
+const CartPage = () => {
   return (
     <>
       <Header/>
       <SubHeader title='Cart' breadcrumb={["Home", "Cart"]} logo={logoSite}/>
+      <Qualitys/>
       <Footer/>
     </>
   )
 }
 
-export default Cart
+export default CartPage
