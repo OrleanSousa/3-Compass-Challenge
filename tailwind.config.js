@@ -26,7 +26,8 @@ export default {
         textCardB: "#898989",
         buttonShop: "#F9F1E7",
         qualitback: "#FAF3EA",
-        textqualit: "#242424"
+        textqualit: "#242424",
+        backProduct: "rgba(184, 142, 47, 0.22)"
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
