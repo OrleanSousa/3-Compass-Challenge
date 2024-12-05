@@ -1,9 +1,8 @@
+import React from 'react';
 import card1 from '../../assets/foto1.png';
 import { IoMdShare } from "react-icons/io";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
-
-import React from 'react';
 
 interface ProductCardProps {
   productName: string;
@@ -19,7 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   productName,
   description,
   price,
-  originalPrice,
+  originalPrice = 0, // Definir valor padrão para originalPrice
   discount,
   isNew,
 }) => {
@@ -43,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       </div>
 
-      {/*hover */}
+      {/* hover */}
       <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center 
       items-center transition-opacity duration-300">
         <button className="bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px]">
@@ -61,9 +60,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <p className="text-[16px] text-textCardB mt-1">{description}</p>
         <div className="mt-2">
           <span className="text-black text-[20px] font-bold">
-            Rp {price.toLocaleString()}
+            Rp {(price ?? 0).toLocaleString()}
           </span>
-          {originalPrice && (
+          {originalPrice > 0 && (
             <span className="text-gray-500 line-through ml-2">
               Rp {originalPrice.toLocaleString()}
             </span>
