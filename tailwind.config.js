@@ -24,7 +24,9 @@ export default {
         textMid: "#616161",
         backFilter: "#F9F1E7",
         textCardB: "#898989",
-        buttonShop: "#F9F1E7"
+        buttonShop: "#F9F1E7",
+        qualitback: "#FAF3EA",
+        textqualit: "#242424"
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
