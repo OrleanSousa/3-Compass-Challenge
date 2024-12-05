@@ -17,25 +17,30 @@ const Footer = () => {
               FL 33134 USA
             </p>
             <div className={styles.socialMedia}>
-              <ul className={styles.socialMediaList}>
-                <li className={styles.socialMediaItem}>
-                  <img src={FacebookVector} alt="Facebook" className="w-4 h-4" />
-                </li>
-                <li className={styles.socialMediaItem}>
-                  <img src={InstaVector} alt="Instagram" className="w-4 h-4" />
-                </li>
-                <li className={styles.socialMediaItem}>
-                  <img src={TwitterVector} alt="Twitter" className="w-4 h-4" />
-                </li>
-                <li className={styles.socialMediaItem}>
-                  <img
-                    src={LinkedinVector}
-                    alt="LinkedIn"
-                    className="w-4 h-4"
-                  />
-                </li>
-              </ul>
-            </div>
+  <ul className={styles.socialMediaList}>
+    <li className={styles.socialMediaItem}>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <img src={FacebookVector} alt="Facebook" className="w-4 h-4" />
+      </a>
+    </li>
+    <li className={styles.socialMediaItem}>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src={InstaVector} alt="Instagram" className="w-4 h-4" />
+      </a>
+    </li>
+    <li className={styles.socialMediaItem}>
+      <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+        <img src={TwitterVector} alt="Twitter" className="w-4 h-4" />
+      </a>
+    </li>
+    <li className={styles.socialMediaItem}>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <img src={LinkedinVector} alt="LinkedIn" className="w-4 h-4" />
+      </a>
+    </li>
+  </ul>
+</div>
+
           </div>
           <div className={styles.rightColumn}>
             <div className="flex justify-between w-[353px] h-[312px]">
