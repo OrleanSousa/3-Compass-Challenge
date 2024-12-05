@@ -1,9 +1,9 @@
 import React from "react";
-import { BsBagX } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai"; // Ícone de fechar/remover
+import { BsBagX } from "react-icons/bs"; // Ícone de fechar/remover
 import { useCart } from "../../hooks/useCart";
 import card1 from '../../assets/foto1.png';
 import { IoIosCloseCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
  // Hook do carrinho
 
 interface CartModalProps {
@@ -86,9 +86,11 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, closeModal }) => {
 
       {/* Botões de ação */}
       <div className="mt-6 flex justify-between">
-        <button className="border border-black pt-[6px] pb-[6px] w-[87px] m-auto h-[30px] rounded-[50px] text-[12px] ">
-          Cart
-        </button>
+        <Link to='/cart'>
+          <button onClick={closeModal} className="border border-black pt-[6px] pb-[6px] w-[87px] m-auto h-[30px] rounded-[50px] text-[12px] ">
+            Cart
+          </button>
+        </Link>
         <button className="border border-black pt-[6px] pb-[6px] w-[118px] m-auto h-[30px] rounded-[50px] text-[12px] ">
           Checkout
         </button>

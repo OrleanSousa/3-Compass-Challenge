@@ -1,4 +1,3 @@
-import React from 'react'; // Import necessário para JSX
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client'; // Certifique-se de que está utilizando React 18+
 import './input.css';
