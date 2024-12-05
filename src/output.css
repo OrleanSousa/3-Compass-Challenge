@@ -855,6 +855,10 @@ video {
   margin-left: 15px;
 }
 
+.mb-\[\]{
+  margin-bottom: ;
+}
+
 .flex{
   display: flex;
 }
@@ -1033,6 +1037,10 @@ video {
 
 .h-\[56px\]{
   height: 56px;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .w-10{

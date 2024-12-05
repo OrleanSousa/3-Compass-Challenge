@@ -21,8 +21,8 @@ const CartPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex w-full px-[100px] pt-[72px]">
-        <div className="w-full max-w-[1240px] flex flex-row gap-[30px]">
+      <div className="flex w-full px-[100px] h-full pt-[72px] ">
+        <div className="w-full max-w-[1240px] flex flex-row gap-[30px] mb-[85px]">
           {/* Lista de Itens do Carrinho */}
           <div className="w-full lg:w-[70%] flex flex-col gap-[30px]">
             {/* Header da Tabela */}
