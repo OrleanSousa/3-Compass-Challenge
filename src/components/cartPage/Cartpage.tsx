@@ -4,8 +4,8 @@ import sofa from "../../assets/sofa5.png";
 const CartPage = () => {
   return (
     <>
-      <div className="flex w-full h-[547px] px-[100px] pt-[72px]">
-        <div className="w-[1240px] h-[390px] flex">
+      <div className="flex w-full h-[547px] px-[100px] pt-[72px] ">
+        <div className="w-[1240px] h-[390px] flex gap-[30px]">
           <div className="w-[817px]">
             {/* Header da tabela */}
             <div className="h-[55px] bg-buttonShop flex items-center gap-[137px]">
@@ -60,7 +60,18 @@ const CartPage = () => {
               </div>
             </div>
           </div>
-          <div></div>
+          <div className="w-[393px] h-[390px] bg-buttonShop flex flex-col items-center pt-[15px]">
+              <h2 className="text-[32px] font-semibold">Cart Totals</h2>
+              <div className="flex mt-[61px] w-[243px] mb-[31px] justify-between">
+                <p className="font-medium">Subtotal</p>
+                <p className="text-gray50">Rs. 250,000.00</p>
+              </div>
+              <div className="flex w-[243px] mb-[42px] justify-between">
+                <p className="font-medium">Total</p>
+                <p className="text-[20px] text-textOrange">Rs. 250,000.00</p>
+              </div>
+              <button className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">Check Out</button>
+          </div>
         </div>
       </div>
     </>
