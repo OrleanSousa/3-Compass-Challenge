@@ -1,12 +1,13 @@
 import { createContext, useContext, useState } from 'react';
 
 interface CartItem {
-  id?:string,
-  name?: string;
+  id:string,
+  name: string;
   productName: string;
   description: string;
   price: number;
   image?: string;
+  quantity: number;
 }
 
 interface CartContextProps {
@@ -22,11 +23,26 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const addToCart = (item: CartItem) => {
-    setCart((prevCart) => [...prevCart, item]);
+    setCart((prevCart) => {
+      // Verifica se o item já está no carrinho
+      const existingItem = prevCart.find((cartItem) => cartItem.productName === item.productName);
+  
+      if (existingItem) {
+        // Se o item já existir, aumenta a quantidade
+        return prevCart.map((cartItem) =>
+          cartItem.productName === item.productName
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+            : cartItem
+        );
+      } else {
+        // Se o item não existir, adiciona o item ao carrinho
+        return [...prevCart, item];
+      }
+    });
   };
 
   const removeFromCart = (productName: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.productName !== productName));
+    setCart((prevCart) => prevCart.filter((cartItem) => cartItem.productName !== productName));
   };
 
   const clearCart = () => {

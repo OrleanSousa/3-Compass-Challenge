@@ -3,21 +3,21 @@ import card1 from '../../assets/foto1.png';
 import { IoMdShare } from "react-icons/io";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
-import { useCart } from '../../hooks/useCart';
-;
- // Importando o hook de carrinho
+import { useCart } from '../../hooks/useCart'; // Importando o hook de carrinho
 
 interface ProductCardProps {
+  id: string;              // Adicionando o id como obrigatório
   productName: string;
   description: string;
   price: number;
   originalPrice?: number;
   discount?: number;
   isNew?: boolean;
-  image?: string;
+  image?: string;          // A imagem continua sendo opcional
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   productName,
   description,
   price,
@@ -30,12 +30,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleAddToCart = () => {
     addToCart({
+      id,               // Passando o 'id' para a função addToCart
+      name: productName, // Agora passando o 'productName'
       productName,
       description,
       price,
       image,
-      id: '',
-      quantity: 0
+      quantity: 1,      // Quantidade padrão de 1 item
     });
   };
 
@@ -53,7 +54,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </span>
         )}
         <img
-          src={card1}
+          src={card1}  // Usando a prop 'image' corretamente
           alt={productName}
           className="w-[285px] h-[301px] object-cover"
         />
@@ -61,8 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* hover */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center 
-      items-center transition-opacity duration-300"
+        className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300"
       >
         <button
           onClick={handleAddToCart}
