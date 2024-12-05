@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 interface CartItem {
-  id:string,
+  id: string;
   name: string;
   productName: string;
   description: string;
@@ -15,27 +15,40 @@ interface CartContextProps {
   addToCart: (item: CartItem) => void;
   removeFromCart: (productName: string) => void;
   clearCart: () => void;
+  updateQuantity: (productName: string, quantity: number) => void;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  // Carrega o carrinho do localStorage quando o componente é montado
+  const loadCartFromLocalStorage = (): CartItem[] => {
+    const cartData = localStorage.getItem('cart');
+    return cartData ? JSON.parse(cartData) : [];
+  };
+
+  const [cart, setCart] = useState<CartItem[]>(loadCartFromLocalStorage);
+
+  useEffect(() => {
+    // Salva o carrinho no localStorage sempre que ele mudar
+    if (cart.length > 0) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      localStorage.removeItem('cart'); // Remove o carrinho se estiver vazio
+    }
+  }, [cart]);
 
   const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
-      // Verifica se o item já está no carrinho
       const existingItem = prevCart.find((cartItem) => cartItem.productName === item.productName);
-  
+
       if (existingItem) {
-        // Se o item já existir, aumenta a quantidade
         return prevCart.map((cartItem) =>
           cartItem.productName === item.productName
             ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
             : cartItem
         );
       } else {
-        // Se o item não existir, adiciona o item ao carrinho
         return [...prevCart, item];
       }
     });
@@ -49,8 +62,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCart([]);
   };
 
+  const updateQuantity = (productName: string, quantity: number) => {
+    setCart((prevCart) => {
+      return prevCart
+        .map((cartItem) =>
+          cartItem.productName === productName
+            ? { ...cartItem, quantity: quantity > 0 ? quantity : 0 }
+            : cartItem
+        )
+        .filter((cartItem) => cartItem.quantity > 0); // Remove os itens com quantidade 0
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );
