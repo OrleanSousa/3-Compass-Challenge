@@ -1,9 +1,11 @@
 import { RiDeleteBin7Fill } from "react-icons/ri";
-import { useCart } from "../../hooks/useCart"; // Importe o hook useCart
 import sofa from "../../assets/sofa5.png";
+import { useCart } from "../../hooks/useCart";
+
 
 const CartPage: React.FC = () => {
-  const { cart, removeFromCart, updateQuantity } = useCart(); // Pegue o carrinho e a função de atualização de quantidade
+  const { cart, removeFromCart, updateQuantity } = useCart();
+  console.log(cart);    // Pegue o carrinho e a função de atualização de quantidade
 
   const decreaseQuantity = (item: CartItem) => {
     const newQuantity = item.quantity - 1;

@@ -6,7 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { useCart } from '../../hooks/useCart'; // Importando o hook de carrinho
 
 interface ProductCardProps {
-  id: string;              // Adicionando o id como obrigatório
+  id: number;              // Adicionando o id como obrigatório
   productName: string;
   description: string;
   price: number;
