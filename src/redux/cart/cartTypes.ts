@@ -1,11 +1,12 @@
 // Tipo para representar um item no carrinho
 export interface CartItem {
-    id: string;         // ID único do produto
-    name: string;       // Nome do produto
-    price: number;      // Preço do produto
-    quantity: number;   // Quantidade do produto no carrinho
-    image?: string;     // (Opcional) URL da imagem do produto
-  }
+  id: number;  // Modificado para string, se necessário
+  price: number;
+  quantity: number;
+  productName: string;
+  image?: string;
+  description?: string;
+}
   
   // Tipo para o estado completo do carrinho
   export interface CartState {

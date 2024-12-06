@@ -64,6 +64,7 @@ const ShopPages = () => {
           {products.slice((currentPage - 1) * productLimit, currentPage * productLimit).map((product) => (
             <ProductCard
               key={product.id}
+              id={product.id}
               productName={product.productName}
               description={product.description}
               originalPrice={product.originalPrice}

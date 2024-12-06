@@ -3,10 +3,12 @@ import card1 from '../../assets/foto1.png';
 import { IoMdShare } from "react-icons/io";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
-import { useCart } from '../../hooks/useCart'; // Importando o hook de carrinho
+import { useDispatch } from 'react-redux'; // Importando useDispatch do Redux
+import { addToCart } from '../../redux/cart/cartSlice'; 
+// Importando a ação addToCart
 
 interface ProductCardProps {
-  id: number;              // Adicionando o id como obrigatório
+  id: number;              // Alterando o tipo para número
   productName: string;
   description: string;
   price: number;
@@ -26,19 +28,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   isNew,
   image = card1, // Usamos uma imagem padrão caso nenhuma seja fornecida
 }) => {
-  const { addToCart } = useCart(); // Usando o hook de carrinho
+  const dispatch = useDispatch(); // Usando o dispatch do Redux
 
-  const handleAddToCart = () => {
-    addToCart({
-      id,               // Passando o 'id' para a função addToCart
-      name: productName, // Agora passando o 'productName'
-      productName,
-      description,
-      price,
-      image,
-      quantity: 1,      // Quantidade padrão de 1 item
-    });
-  };
+
 
   return (
     <div className="relative bg-white overflow-hidden w-[285px] h-[446px] group">
@@ -54,7 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </span>
         )}
         <img
-          src={card1}  // Usando a prop 'image' corretamente
+          src={image} // Corrigido para usar a prop 'image'
           alt={productName}
           className="w-[285px] h-[301px] object-cover"
         />
@@ -65,7 +57,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
         className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300"
       >
         <button
-          onClick={handleAddToCart}
+          onClick={() => {
+            console.log("Adding to cart:", id); // Verifique o id aqui
+            dispatch(addToCart({
+              id,
+              productName,
+              description,
+              price,
+              image,
+              quantity: 1,
+            }));
+          
+          }}
           className="bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px]"
         >
           Add to cart
