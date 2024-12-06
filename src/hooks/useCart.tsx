@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 interface CartItem {
-  id: string;
+  id: number;
   name: string;
   productName: string;
   description: string;
@@ -81,6 +81,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = (): CartContextProps => {
   const context = useContext(CartContext);
   if (!context) {
