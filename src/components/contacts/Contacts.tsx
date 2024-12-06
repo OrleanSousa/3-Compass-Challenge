@@ -11,8 +11,8 @@ const Contacts = () => {
           <h2 className="text-[36px] font-semibold mb-[7px]">Get In Touch With Us</h2>
           <p className="text-gray50 mb-[14px] w-[644px] text-center">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. 
             Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
-          <div className="w-[1058px] h-[923px] bg-slate-400 flex justify-between">
-            <div className="bg-green-500 w-[393px] h-[537px] flex flex-col justify-center items-center gap-y-[45px] mt-[68px]">
+          <div className="w-[1058px] h-[923px]  flex justify-between">
+            <div className=" w-[393px] h-[537px] flex flex-col justify-center items-center gap-y-[45px] mt-[68px]">
               <div className="w-[254px] h-[120px]  flex justify-between ">
                 <IoLocationSharp className="w-[22px] h-[27.59px] "/>
                 <div>
@@ -39,9 +39,27 @@ const Contacts = () => {
               
             </div>
             <div></div>
-          <div className="bg-red-300 w-[635px] h-[923px]">
-
-            <button className="bg-textOrange w-[237px] h-[55px] text-white"> Submit</button> 
+          <div className=" w-[635px] h-[923px]">
+            <div className="w-[532px] h-[741px]  mx-auto mt-[119px] flex flex-col justify-between">
+              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]"> 
+                <label htmlFor=""   >Your name</label>
+                <input type="text" placeholder="Name" className="border border-gray50 h-[75px] rounded-xl pl-[31px]"/>
+              </div>
+              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]">
+              <label htmlFor="">Email address</label>
+              <input type="email" placeholder="email" className="border border-gray50 h-[75px] rounded-xl pl-[31px]"/>
+              </div>
+              <div className="w-[530px] h-[121px] flex flex-col">
+              <label htmlFor="">Subject</label>
+              <input type="text" placeholder="This is an optional" className="border border-gray50 h-[75px] rounded-xl pl-[31px]"/>
+              </div>
+              <div className="w-[530px] h-[166px] flex flex-col gap-[22px]">
+              <label htmlFor="">Message</label>
+              <input type="text" placeholder="Hi! i’d like to ask about" className="border border-gray50 h-[120px] rounded-xl pl-[31px]"/>
+              </div>
+              <button className="bg-textOrange w-[237px] h-[55px] text-white rounded-md"> Submit</button> 
+            </div>
+            
           </div>  
           </div>
       </div>
