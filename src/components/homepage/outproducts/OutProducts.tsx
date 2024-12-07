@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../../card-product/CardProdutcs";
-import products from "../../../data/products.json"; // Importing JSON with products
+import products from "../../../../public/data/products.json"; // Importing JSON with products
 import ButtonCard from "./ButtonCard";
 
 const OutProducts: React.FC = () => {

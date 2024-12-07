@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HiViewGrid } from "react-icons/hi";
 import { VscSettings } from "react-icons/vsc";
 import SubHeader from '../subHeader/SubHeader';
 import ProductCard from '../card-product/CardProdutcs';
-import products from "../../data/products.json";
+import products from '../../../public/data/products.json';
 import { MdOutlineViewDay } from "react-icons/md";
 
 // Importando o hook customizado
