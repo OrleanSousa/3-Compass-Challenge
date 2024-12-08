@@ -9,6 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { FaFacebook,  FaLinkedin  } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
+import card1 from '../../assets/sofa5.png'
+import ProductCard from "../card-product/CardProdutcs";
+import products from "../../../public/data/products.json";
+import ButtonCard from "../homepage/outproducts/ButtonCard";
+
 
 
 const SingleProduct = () => {
@@ -99,22 +104,22 @@ const SingleProduct = () => {
         <div className="flex w-[1241px] h-[730px] justify-between">
           <div className="w-[553px] h-[500px] flex">
             <div className="w-[76px] h-[416px] flex flex-col justify-between">
-              <div className="bg-buttonShop rounded-[10px]">
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px] overflow-hidden flex">
+                <img src={card1} alt={product.productName} className="w-[83px] h-[55px] self-center"/>
+              </div>
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
                 <img src={product.image} alt={product.productName} />
               </div>
-              <div className="bg-buttonShop rounded-[10px]">
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
                 <img src={product.image} alt={product.productName} />
               </div>
-              <div className="bg-buttonShop rounded-[10px]">
-                <img src={product.image} alt={product.productName} />
-              </div>
-              <div className="bg-buttonShop rounded-[10px]">
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
                 <img src={product.image} alt={product.productName} />
               </div>
             </div>
             <div className="w-[477px] h-[500px] flex justify-center">
               <div className="w-[419px] h-[500px] bg-buttonShop rounded-[10px] flex items-center overflow-hidden">
-                <img src={product.image} alt={product.productName} className="w-[477px] h-[391px]" />
+                <img src={card1} alt={product.productName} className="w-[477px] h-[391px] self-center" />
               </div>
             </div>
           </div>
@@ -213,6 +218,50 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="w-[1440px] h-[744px] flex flex-col items-center border-t border-b pt-[49px] gap-[36px]">
+        <div className="flex w-[536px] h-[36px] justify-between ">
+          <h2 className="text-[24px] font-medium">Description</h2>
+          <h2 className="text-gray50 text-[24px]">Additional Information</h2>
+        </div>
+        <div className="w-[1026px] h-[174px] flex justify-between flex-col text-gray50 ">
+          <p>Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker 
+            takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
+          <p>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar
+             as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced 
+             audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. 
+             The analogue knobs allow you to fine tune the controls to your personal 
+            preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
+        </div>
+        <div className="w-[1239px] h-[348px] flex justify-between ">
+          <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
+            <img src={card1} alt="" className="w-[605px] h-[348px]"/>
+          </div>
+          <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
+            <img src={card1} alt="" className="w-[605px] h-[348px]"/>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-[1440px] h-[765px] flex flex-col pt-[54px] items-center">
+        <h2 className="text-[36px] font-medium">Related Products</h2>
+        <div className="flex w-[1236px] h-[439px] gap-6 mb-[43.32px] mt-[25px]">
+        {products.slice(0, 4).map((product) => (
+          <ProductCard
+          key={product.id}
+          id={product.id}  // Certifique-se de que o id está sendo passado corretamente
+          productName={product.productName}
+          description={product.description}
+          price={product.price}
+          originalPrice={product.originalPrice}
+          discount={product.discount}
+          isNew={product.isNew}
+          image={product.image}
+        />
+        ))}
+        </div>
+        <ButtonCard />
       </div>
     </>
   );
