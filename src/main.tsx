@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom/client'; // Certifique-se de que está utilizand
 import './input.css';
 import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
-import { CartProvider } from './hooks/useCart.js'; // Certifique-se que o caminho está correto
+import { Provider } from 'react-redux'; 
+import {store} from './redux/store.ts'
+
+
 
 // Renderizando o aplicativo
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <CartProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      </CartProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
   </StrictMode>
 );
+
+

@@ -1,29 +1,33 @@
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import sofa from "../../assets/sofa5.png";
-import { useCart } from "../../hooks/useCart";
-
+import { useDispatch, useSelector } from "react-redux"; // Importando useDispatch e useSelector
+import { removeFromCart, updateQuantity } from "../../redux/cart/cartSlice"; // Importando as ações
+import { RootState } from "../../redux/store"; // Importando o tipo do estado
+import { CartItem } from "../../redux/cart/cartTypes";
 
 const CartPage: React.FC = () => {
-  const { cart, removeFromCart, updateQuantity } = useCart();
-  console.log(cart);    // Pegue o carrinho e a função de atualização de quantidade
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart.items); // Selecionando os itens do carrinho
 
+  // Função para diminuir a quantidade
   const decreaseQuantity = (item: CartItem) => {
     const newQuantity = item.quantity - 1;
     if (newQuantity > 0) {
-      updateQuantity(item.productName, newQuantity); // Diminui a quantidade
+      dispatch(updateQuantity({ id: item.id, quantity: newQuantity })); // Atualiza a quantidade
     } else {
-      removeFromCart(item.productName); // Remove o item do carrinho se a quantidade for 0
+      dispatch(removeFromCart(item.id)); // Remove o item se a quantidade for 0
     }
   };
 
+  // Função para aumentar a quantidade
   const increaseQuantity = (item: CartItem) => {
     const newQuantity = item.quantity + 1;
-    updateQuantity(item.productName, newQuantity); // Aumenta a quantidade
+    dispatch(updateQuantity({ id: item.id, quantity: newQuantity })); // Atualiza a quantidade
   };
 
   return (
     <>
-      <div className="flex w-full px-[100px] h-full pt-[72px] ">
+      <div className="flex w-full px-[100px] h-full pt-[72px]">
         <div className="w-full max-w-[1240px] flex flex-row gap-[30px] mb-[85px]">
           {/* Lista de Itens do Carrinho */}
           <div className="w-full lg:w-[70%] flex flex-col gap-[30px]">
@@ -41,17 +45,19 @@ const CartPage: React.FC = () => {
 
             {/* Renderiza os itens do carrinho */}
             {cart.length > 0 ? (
-              cart.map((item) => (
+              cart.map((item: CartItem) => (
                 <div key={item.id} className="w-full flex items-center gap-[20px] py-[15px]">
                   {/* Imagem */}
                   <div className="bg-buttonBord bg-opacity-[0.22] rounded-[10px] w-[105px] h-[105px] flex justify-center items-center">
-                    <img src={sofa} alt={item.name} />
+                    <img src={sofa} alt={item.productName
+
+                    } />
                   </div>
 
                   {/* Detalhes do Produto */}
                   <div className="flex flex-grow items-center justify-between">
                     {/* Nome do Produto */}
-                    <p className="text-gray50 text-center w-[150px]">{item.name}</p>
+                    <p className="text-gray50 text-center w-[150px]">{item.productName}</p>
 
                     {/* Preço */}
                     <p className="text-gray50 text-center">Rs. {item.price.toLocaleString()}</p>
@@ -82,7 +88,7 @@ const CartPage: React.FC = () => {
                     <div className="w-[28px] h-[28px] flex justify-center items-center mr-[15px]">
                       <a
                         className="cursor-pointer"
-                        onClick={() => removeFromCart(item.productName)} // Chama a função de remoção ao clicar
+                        onClick={() => dispatch(removeFromCart(item.id))} // Dispara a ação para remover o item
                       >
                         <RiDeleteBin7Fill className="text-textOrange text-[26px]" />
                       </a>
@@ -102,14 +108,14 @@ const CartPage: React.FC = () => {
               <p className="font-medium">Subtotal</p>
               <p className="text-gray50">
                 Rs.{" "}
-                {cart.reduce((total, item) => total + item.price * item.quantity, 0).toLocaleString()}
+                {cart.reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0).toLocaleString()}
               </p>
             </div>
             <div className="flex w-[243px] mb-[42px] justify-between">
               <p className="font-medium">Total</p>
               <p className="text-[20px] text-textOrange">
                 Rs.{" "}
-                {cart.reduce((total, item) => total + item.price * item.quantity, 0).toLocaleString()}
+                {cart.reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0).toLocaleString()}
               </p>
             </div>
             <button className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">

@@ -27,7 +27,10 @@ export default {
         buttonShop: "#F9F1E7",
         qualitback: "#FAF3EA",
         textqualit: "#242424",
-        backProduct: "rgba(184, 142, 47, 0.22)"
+        backProduct: "rgba(184, 142, 47, 0.22)",
+        starcolor: "#ffc700",
+        circleroxo: "#816DFA",
+        
       },
       backgroundImage: {
         'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",

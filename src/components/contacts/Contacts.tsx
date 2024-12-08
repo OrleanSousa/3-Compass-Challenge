@@ -49,7 +49,7 @@ const Contacts = () => {
               <label htmlFor="">Email address</label>
               <input type="email" placeholder="email" className="border border-gray50 h-[75px] rounded-xl pl-[31px]"/>
               </div>
-              <div className="w-[530px] h-[121px] flex flex-col">
+              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]">
               <label htmlFor="">Subject</label>
               <input type="text" placeholder="This is an optional" className="border border-gray50 h-[75px] rounded-xl pl-[31px]"/>
               </div>
