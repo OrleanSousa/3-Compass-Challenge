@@ -1,8 +1,8 @@
-import seta from '../../../assets/seta.svg';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import foto1 from '../../../assets/foto1.png';
-import traco from '../../../assets/traco.svg';
+import { TfiLayoutLineSolid } from "react-icons/tfi";
+import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+
 
 const FeaturedCarousel = () => {
   const slides = [
@@ -10,44 +10,45 @@ const FeaturedCarousel = () => {
       id: 1,
       title: "Inner Peace",
       description: "Modern and elegant chair for your cafe.",
-      image: foto1,
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide1.png',
     },
     {
       id: 2,
       title: "Inner Peace",
       description: "Comfortable and stylish living room design.",
-      image: foto1,
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide2.png',
     },
     {
       id: 3,
       title: "Inner Peace",
       description: "A serene workspace for productivity.",
-      image: foto1,
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
     },
     {
       id: 4,
       title: "Inner Peace",
-      description: "A fresh and vibrant kitchen layout.",
-      image: foto1,
+      description: "A serene workspace for productivity.",
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
     },
     {
       id: 5,
       title: "Inner Peace",
-      description: "A fresh and vibrant kitchen layout.",
-      image: foto1,
+      description: "A serene workspace for productivity.",
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide1.png',
     },
     {
       id: 6,
       title: "Inner Peace",
-      description: "A fresh and vibrant kitchen layout.",
-      image: foto1,
+      description: "A serene workspace for productivity.",
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide2.png',
     },
     {
       id: 7,
       title: "Inner Peace",
-      description: "A fresh and vibrant kitchen layout.",
-      image: foto1,
+      description: "A serene workspace for productivity.",
+      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
     },
+
   ];
 
   return (
@@ -55,16 +56,19 @@ const FeaturedCarousel = () => {
       options={{
         pauseOnHover: true,
         arrows: true, // Habilita as setas
-        pagination: true,
+        pagination: true, // Desativa a paginação
         gap: '24px',
         perPage: 3,
         perMove: 1,
         rewind: true,
+        loop: true, // Habilita a rolagem infinita
       }}
       aria-label="Featured Products"
       className="mx-auto max-w-7xl"
     >
       {slides.map((slide) => (
+         
+
         <SplideSlide key={slide.id}>
           <div className="relative w-[404px] h-[582px]">
             <img
@@ -76,20 +80,21 @@ const FeaturedCarousel = () => {
               <div className="relative flex flex-col justify-center items-center bg-white w-[217px] h-[130px]">
                 <div className="flex items-center gap-2 text-textMid">
                   <span className="text-lg font-medium">01</span>
-                  <img src={traco} alt="separador" className="w-6 h-1" />
+                  <TfiLayoutLineSolid size={24} /> 
                   <span className="text-lg font-medium">Bed Room</span>
                 </div>
                 <h2 className="text-[28px] font-semibold mt-2">{slide.title}</h2>
                 <div
                   className="bg-buttonBord absolute w-[48px] h-[48px] flex 
-                justify-center items-center bottom-0 right-[-48px]"
+                justify-center items-center bottom-0 -right-[48px]" // Seta à direita
                 >
-                  <img src={seta} alt="" className="w-[24px] h-[24px]" />
+                  <HiOutlineArrowSmallRight size={30} className='text-white'/>
                 </div>
               </div>
             </div>
           </div>
         </SplideSlide>
+        
       ))}
     </Splide>
   );

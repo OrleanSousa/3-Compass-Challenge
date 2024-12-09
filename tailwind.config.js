@@ -33,8 +33,8 @@ export default {
         
       },
       backgroundImage: {
-        'backgroudHome': "url('./src/assets/scandinavian-interior-mockup-wall-decal-background 1.png')",
-        'backSubHeader' : "url('./src/assets/back-Sub-Header.png')"
+        'backgroudHome': "url('https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/scandinavian-interior-mockup-wall-decal-background+1.png')",
+        'backSubHeader' : "url('https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/back-Sub-Header.png')"
         
       }
     },
