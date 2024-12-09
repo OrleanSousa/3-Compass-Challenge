@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useState } from "react";
+import axios from "axios";
 import { validateField, formatFieldValue } from "../utils/validators"; // Ajuste o caminho conforme necessário
 
 const CheckoutPage = () => {
@@ -22,6 +23,41 @@ const CheckoutPage = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // Função para preencher o formulário com base no CEP
+  const handleCepChange = async (cep: string) => {
+    if (!cep || cep.length !== 8) return; // Garantir que o CEP tenha 8 dígitos
+
+    try {
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = response.data;
+
+      if (data.erro) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          zipCode: "CEP não encontrado",
+        }));
+      } else {
+        setFormFields((prevFields) => ({
+          ...prevFields,
+          streetAddress: data.logradouro,
+          city: data.localidade,
+          province: data.uf,
+          country: "Brasil", // Definindo o país como Brasil por padrão
+        }));
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          zipCode: "",
+        }));
+      }
+    } catch (error) {
+      console.error("Erro ao buscar o CEP:", error);
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        zipCode: "Erro ao buscar o CEP",
+      }));
+    }
+  };
+
   // Handler para onChange
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -41,6 +77,18 @@ const CheckoutPage = () => {
       ...prevErrors,
       [name]: error,
     }));
+  };
+
+  // Handler para o campo CEP
+  const handleZipCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setFormFields((prevFields) => ({
+      ...prevFields,
+      zipCode: value,
+    }));
+
+    // Chamar a função para buscar o CEP sempre que o valor mudar
+    handleCepChange(value);
   };
 
   return (
@@ -85,7 +133,7 @@ const CheckoutPage = () => {
               type="text"
               name="zipCode"
               value={formFields.zipCode}
-              onChange={handleChange}
+              onChange={handleZipCodeChange} // Mudança no evento para chamar a função de CEP
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.zipCode ? "border-red-500" : "border-gray50"
               }`}
@@ -163,100 +211,77 @@ const CheckoutPage = () => {
             {errors.companyName && <p className="text-red-500 text-sm">{errors.companyName}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="addOnAddress" className="font-medium">Add-on Address</label>
-            <input
-              type="text"
-              name="addOnAddress"
-              value={formFields.addOnAddress}
-              onChange={handleChange}
-              className={`w-[453px] h-[75px] rounded-xl border ${
-                errors.addOnAddress ? "border-red-500" : "border-gray50"
-              }`}
-            />
-            {errors.addOnAddress && <p className="text-red-500 text-sm">{errors.addOnAddress}</p>}
-          </div>
-
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="email" className="font-medium">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              value={formFields.email}
-              onChange={handleChange}
-              className={`w-[453px] h-[75px] rounded-xl border ${
-                errors.email ? "border-red-500" : "border-gray50"
-              }`}
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-          </div>
         </div>
 
         {/* Resumo do carrinho */}
-        <div className="w-full max-w-[608px] h-[789px] flex items-center justify-center">
-          <div className="w-full max-w-[533px] h-auto flex flex-col justify-between p-[16px]">
-            {/* Resumo */}
-            <div className="w-full max-w-[608px] h-[789px]  flex items-center justify-center">
+        
+
+
+
+<div className="w-full max-w-[608px] h-[789px] flex items-center justify-center">
+<div className="w-full max-w-[533px] h-auto flex flex-col justify-between p-[16px]">
+  {/* Resumo */}
+  <div className="w-full max-w-[608px] h-[789px]  flex items-center justify-center">
 <div className="w-full max-w-[533px] h-auto flex flex-col justify-between p-[16px]">
 <div>
-  <div className="flex w-full justify-between">
-    <p className="font-medium text-2xl">Product</p>
-    <p className="font-medium text-2xl">Subtotal</p>
-  </div>
-  {cartItems.map((item) => (
-  <div key={item.id} className="flex w-full justify-between mt-[14px]">
-    <p className="font-light">{item.productName} x {item.quantity}</p>
-    <p className="font-light">Rs. {(item.price * item.quantity).toLocaleString()}</p>
-  </div>
+<div className="flex w-full justify-between">
+<p className="font-medium text-2xl">Product</p>
+<p className="font-medium text-2xl">Subtotal</p>
+</div>
+{cartItems.map((item) => (
+<div key={item.id} className="flex w-full justify-between mt-[14px]">
+<p className="font-light">{item.productName} x {item.quantity}</p>
+<p className="font-light">Rs. {(item.price * item.quantity).toLocaleString()}</p>
+</div>
 ))}
-   <div className="flex w-full justify-between mt-[22px]">
-  <p>Subtotal</p>
-  <p className="font-light">Rs. {subtotal.toLocaleString()}</p>
+<div className="flex w-full justify-between mt-[22px]">
+<p>Subtotal</p>
+<p className="font-light">Rs. {subtotal.toLocaleString()}</p>
 </div>
 <div className="flex w-full justify-between mt-[22px]">
-  <p>Total</p>
-  <p className="text-2xl font-bold text-textOrange">Rs. {subtotal.toLocaleString()}</p>
+<p>Total</p>
+<p className="text-2xl font-bold text-textOrange">Rs. {subtotal.toLocaleString()}</p>
 </div>
-  <div className="border border-b-gray50 mt-[33.5px] w-full mx-auto"></div>
+<div className="border border-b-gray50 mt-[33.5px] w-full mx-auto"></div>
 </div>
 
 <div className="w-full flex flex-col space-y-[22px] mt-[22px]">
-  <div className="flex items-center gap-[15px]">
-    <label className="inline-flex items-center cursor-pointer">
-      <input type="checkbox" className="opacity-0 peer" />
-      <span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
-    </label>
-    <p>Direct Bank Transfer</p>
-  </div>
-  <p className="font-light text-gray50">Make your payment directly into our bank account. 
-    Please use your Order ID as the payment reference. 
-    Your order will not be shipped until the funds have cleared in our account.</p>
+<div className="flex items-center gap-[15px]">
+<label className="inline-flex items-center cursor-pointer">
+<input type="checkbox" className="opacity-0 peer" />
+<span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
+</label>
+<p>Direct Bank Transfer</p>
+</div>
+<p className="font-light text-gray50">Make your payment directly into our bank account. 
+Please use your Order ID as the payment reference. 
+Your order will not be shipped until the funds have cleared in our account.</p>
 
-    <div className="flex items-center gap-[15px]">
-    <label className="inline-flex items-center cursor-pointer">
-      <input type="checkbox" className="opacity-0 peer" />
-      <span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
-    </label>
-    <p>Direct Bank Transfer</p>
-  </div>
+<div className="flex items-center gap-[15px]">
+<label className="inline-flex items-center cursor-pointer">
+<input type="checkbox" className="opacity-0 peer" />
+<span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
+</label>
+<p>Direct Bank Transfer</p>
+</div>
 
-  <div className="flex items-center gap-[15px]">
-    <label className="inline-flex items-center cursor-pointer">
-      <input type="checkbox" className="opacity-0 peer" />
-      <span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
-    </label>
-    <p>Cash On Delivery</p>
-  </div>
-  <p className="font-light text-gray50">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
+<div className="flex items-center gap-[15px]">
+<label className="inline-flex items-center cursor-pointer">
+<input type="checkbox" className="opacity-0 peer" />
+<span className="w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px]"></span>
+</label>
+<p>Cash On Delivery</p>
+</div>
+<p className="font-light text-gray50">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
 </div>
 
 <div className="flex justify-center mt-[22px]">
-  <button className="w-[318px] h-[64px] text-[20px] rounded-[15px] border border-black mt-[17px] cursor-pointer">Place order</button>
+<button className="w-[318px] h-[64px] text-[20px] rounded-[15px] border border-black mt-[17px] cursor-pointer">Place order</button>
 </div>
 </div>
 </div>
-          </div>
-        </div>
+</div>
+</div>
       </div>
     </div>
   );
