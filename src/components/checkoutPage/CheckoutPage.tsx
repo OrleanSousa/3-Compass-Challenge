@@ -7,21 +7,33 @@ import { validateField, formatFieldValue } from "../utils/validators"; // Ajuste
 const CheckoutPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-
   const [formFields, setFormFields] = useState({
-    firstName: "",
-    lastName: "",
-    zipCode: "",
-    country: "",
-    streetAddress: "",
-    city: "",
-    province: "",
-    email: "",
-    companyName: "",
-    addOnAddress: "",
+    firstName: '',
+    lastName: '',
+    zipCode: '',
+    streetAddress: '',
+    city: '',
+    province: '',
+    country: 'Brazil',
+    companyName: '',
+    addOnAddress: '',
+    email: '',
   });
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    zipCode: '',
+    streetAddress: '',
+    city: '',
+    province: '',
+    country: '',
+    companyName: '',
+    addOnAddress: '',
+    email: '',
+  });
+
+
 
   // Função para preencher o formulário com base no CEP
   const handleCepChange = async (cep: string) => {
@@ -62,19 +74,18 @@ const CheckoutPage = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    // Formatar o valor conforme necessário
+    // Atualizar o valor do campo e formatá-lo (se necessário)
     const formattedValue = formatFieldValue(name, value);
 
-    // Atualizar o estado do campo
-    setFormFields((prevFields) => ({
-      ...prevFields,
+    setFormFields((prev) => ({
+      ...prev,
       [name]: formattedValue,
     }));
 
-    // Validar o campo
+    // Validar o campo assim que o usuário digitar
     const error = validateField(name, formattedValue);
-    setErrors((prevErrors) => ({
-      ...prevErrors,
+    setErrors((prev) => ({
+      ...prev,
       [name]: error,
     }));
   };

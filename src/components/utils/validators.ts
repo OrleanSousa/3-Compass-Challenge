@@ -19,7 +19,7 @@ export const validateField = (name: string, value: string) => {
       break;
 
     case "email":
-      // Validação para email
+      // Validação para o formato de email
       if (!/\S+@\S+\.\S+/.test(value)) {
         error = "Please enter a valid email address.";
       }
