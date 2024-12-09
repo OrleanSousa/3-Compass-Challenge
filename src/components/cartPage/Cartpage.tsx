@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"; // Importando useDispatc
 import { removeFromCart, updateQuantity } from "../../redux/cart/cartSlice"; // Importando as ações
 import { RootState } from "../../redux/store"; // Importando o tipo do estado
 import { CartItem } from "../../redux/cart/cartTypes";
+import { Link } from "react-router-dom";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -117,9 +118,12 @@ const CartPage: React.FC = () => {
                 {cart.reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0).toLocaleString()}
               </p>
             </div>
-            <button className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">
+            <Link to='/checkout'>
+            
+            <button  className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">
               Check Out
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,13 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+
+
 const CheckoutPage = () => {
+
+  const cartItems = useSelector((state: RootState) => state.cart.items); // Substitua "cart.items" pelo caminho correto do estado do carrinho
+
+  // Calculando o subtotal
+  const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   return (
     <>
       <div className="w-[1440px] h-[1829px] flex justify-center items-center ">
@@ -59,18 +68,20 @@ const CheckoutPage = () => {
                   <p className="font-medium text-2xl">Product</p>
                   <p className="font-medium text-2xl">Subtotal</p>
                 </div>
-                <div className="flex w-full justify-between mt-[14px]">
-                  <p className="font-light">itemName + quantidade</p>
-                  <p className="font-light">Rs. 250,000.00</p>
+                {cartItems.map((item) => (
+                <div key={item.id} className="flex w-full justify-between mt-[14px]">
+                  <p className="font-light">{item.productName} x {item.quantity}</p>
+                  <p className="font-light">Rs. {(item.price * item.quantity).toLocaleString()}</p>
                 </div>
-                <div className="flex w-full justify-between mt-[22px]">
-                  <p>Subtotal</p>
-                  <p className="font-light">Rs. 250,000.00</p>
-                </div>
-                <div className="flex w-full justify-between mt-[22px]">
-                  <p>Total</p>
-                  <p className="text-2xl font-bold text-textOrange">Rs. 250,000.00</p>
-                </div>
+              ))}
+                 <div className="flex w-full justify-between mt-[22px]">
+                <p>Subtotal</p>
+                <p className="font-light">Rs. {subtotal.toLocaleString()}</p>
+              </div>
+              <div className="flex w-full justify-between mt-[22px]">
+                <p>Total</p>
+                <p className="text-2xl font-bold text-textOrange">Rs. {subtotal.toLocaleString()}</p>
+              </div>
                 <div className="border border-b-gray50 mt-[33.5px] w-full mx-auto"></div>
               </div>
 

@@ -91,10 +91,12 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, closeModal }) => {
             Cart
           </button>
         </Link>
+        <Link to='/checkout'>
         <button className="border border-black pt-[6px] pb-[6px] w-[118px] m-auto h-[30px] rounded-[50px] text-[12px]">
           Checkout
         </button>
-        <button className="border border-black w-[135px] h-[30px] rounded-[50px]">
+        </Link>
+        <button className="border border-black w-[135px] h-[30px] rounded-[50px] text-[12px]">
           Comparison
         </button>
       </div>
