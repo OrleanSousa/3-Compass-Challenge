@@ -1,4 +1,4 @@
-import React from 'react'
+
 import CartPage from '../components/cartPage/Cartpage'
 import Header from '../components/header/Header'
 import SubHeader from '../components/subHeader/SubHeader'
