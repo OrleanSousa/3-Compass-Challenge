@@ -112,8 +112,8 @@ const Contacts = () => {
           </div>
           <div className="w-[635px] h-[923px]">
             <form onSubmit={handleSubmit} className="w-[532px] h-[741px] mx-auto mt-[119px] flex flex-col justify-between">
-              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]">
-                <label htmlFor="firstName">Your name</label>
+              <div className="w-[530px] h-[121px] flex flex-col ">
+                <label htmlFor="firstName" className="mb-[22px]">Your name</label>
                 <input
                   type="text"
                   name="firstName"
@@ -126,22 +126,22 @@ const Contacts = () => {
                 />
                 {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
               </div>
-              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]">
-                <label htmlFor="email">Email address</label>
+              <div className="w-[530px] h-[121px] flex flex-col ">
+                <label htmlFor="email" className="mb-[22px]">Email address</label>
                 <input
                   type="email"
                   name="email"
                   placeholder="Email"
                   value={formFields.email}
                   onChange={handleChange}
-                  className={`border border-gray50 h-[75px] rounded-xl pl-[31px] ${
+                  className={`border border-gray50 min-h-[75px] rounded-xl pl-[31px] ${
                     errors.email ? "border-red-500" : ""
-                  }`}
+                  } `}
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               </div>
-              <div className="w-[530px] h-[121px] flex flex-col gap-[22px]">
-                <label htmlFor="subject">Subject</label>
+              <div className="w-[530px] h-[121px] flex flex-col ">
+                <label htmlFor="subject" className="mb-[22px]">Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -151,8 +151,8 @@ const Contacts = () => {
                   className="border border-gray50 h-[75px] rounded-xl pl-[31px]"
                 />
               </div>
-              <div className="w-[530px] h-[166px] flex flex-col gap-[22px]">
-                <label htmlFor="message">Message</label>
+              <div className="w-[530px] h-[166px] flex flex-col ">
+                <label htmlFor="message" className="mb-[22px]">Message</label>
                 <input
                   type="text"
                   name="message"
