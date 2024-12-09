@@ -6,17 +6,17 @@ import ProductCard from '../card-product/CardProdutcs';
 import products from '../../data/products.json';
 import { MdOutlineViewDay } from "react-icons/md";
 
-// Importando o hook customizado
+// Importing the custom hook
 import useProductLimit from '../../hooks/useProductLimit';
 
 const ShopPages = () => {
-  // Estado para controlar a página atual
+  // State to control the current page
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  // Usando o hook customizado para controlar o limite de produtos
+  // Using custom hook to control product limit
   const { productLimit, handleProductLimitChange } = useProductLimit(16);
 
-  // Função para ir para a próxima página
+  // Function to go to the next page
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= Math.ceil(products.length / productLimit)) {
       setCurrentPage(page);
@@ -77,7 +77,7 @@ const ShopPages = () => {
         </div>
       </div>
       <div className='flex m-auto justify-between w-[392px] h-[90px] items-end mb-[85px]'>
-        {/* Botões de paginação */}
+        {/* Pagination Buttons */}
         {[1, 2, 3].map((page) => (
           <button
             key={page}

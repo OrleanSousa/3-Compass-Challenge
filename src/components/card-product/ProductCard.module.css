@@ -1,0 +1,49 @@
+/* Classes Tailwind separadas como strings */
+.cardContainer {
+    @apply relative bg-white overflow-hidden w-[285px] h-[446px];
+  }
+  
+  .discountBadge {
+    @apply absolute top-[24px] right-[24px] bg-red-500 text-white text-sm px-2 py-1 rounded-full w-[48px] h-[48px] flex justify-center items-center;
+  }
+  
+  .newBadge {
+    @apply absolute top-[24px] right-[24px] w-[48px] h-[48px] bg-green-500 flex justify-center items-center text-white text-sm px-2 py-1 rounded-full;
+  }
+  
+  .productImage {
+    @apply w-[285px] h-[301px] object-cover;
+  }
+  
+  .hoverOverlay {
+    @apply absolute inset-0 bg-black bg-opacity-60 opacity-0 flex flex-col justify-center items-center transition-opacity duration-300 h-[301px];
+  }
+  
+  .addToCartButton {
+    @apply bg-white text-buttonBord px-6 py-2 text-[16px] font-semibold mb-4 w-[202px] h-[48px] ;
+  }
+  
+  .iconContainer {
+    @apply flex font-semibold text-white text-[16px] justify-between w-[252px] h-[24px];
+  }
+  
+  .cardFooter {
+    @apply p-4 text-start bg-gray-100;
+  }
+  
+  .productName {
+    @apply text-[24px] font-semibold text-textcard;
+  }
+  
+  .productDescription {
+    @apply text-[16px] text-textCardB mt-1;
+  }
+  
+  .productPrice {
+    @apply text-black text-[20px] font-bold;
+  }
+  
+  .originalPrice {
+    @apply text-gray-500 line-through ml-2;
+  }
+  

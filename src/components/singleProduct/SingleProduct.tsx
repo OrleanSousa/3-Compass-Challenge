@@ -15,11 +15,11 @@ import { setProduct } from "../../redux/cart/productSlice";
 
 
 const SingleProduct = () => {
-  const { id } = useParams();  // Recebe o id do produto via URL
+  const { id } = useParams();  // Receives the product id via URL
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.items);
   
-  // Obter o produto diretamente do Redux
+  // Get the product directly from Redux
   const product = useSelector((state: RootState) => state.product.product);
 
 
@@ -40,7 +40,7 @@ const SingleProduct = () => {
     }
   }, [id]);
 
-  // Função para adicionar ao carrinho
+  // Add to cart function
   const handleAddToCart = () => {
     if (product) {
       const existingProduct = cart.find(item => item.id === product.id);
@@ -52,7 +52,7 @@ const SingleProduct = () => {
     }
   };
 
-  // Função para diminuir a quantidade
+  // Function to decrease quantity
   const decreaseQuantity = (product: CartItem) => {
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct && existingProduct.quantity > 0) {
@@ -62,7 +62,7 @@ const SingleProduct = () => {
     }
   };
 
-  // Função para aumentar a quantidade
+  // Function to increase quantity
   const increaseQuantity = (products: CartItem) => {
     const existingProduct = cart.find(item => item.id === products.id);
     if (existingProduct) {
@@ -71,7 +71,7 @@ const SingleProduct = () => {
   };
 
   if (!product) {
-    return <div>Loading...</div>;  // Exibe uma mensagem enquanto o produto está sendo carregado
+    return <div>Loading...</div>;  // Displays a message while the product is charging
   }
 
   return (
@@ -242,7 +242,7 @@ const SingleProduct = () => {
         {products.slice(0, 4).map((product) => (
           <ProductCard
           key={product.id}
-          id={product.id}  // Certifique-se de que o id está sendo passado corretamente
+          id={product.id} 
           productName={product.productName}
           description={product.description}
           price={product.price}
