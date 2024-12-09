@@ -98,37 +98,54 @@ const CheckoutPage = () => {
           <h2 className="font-semibold text-3xl">Billing details</h2>
 
           <div className="flex gap-[31px]">
-            <div className="flex flex-col w-[212px] h-[121px] gap-[22px]">
-              <label htmlFor="firstName" className="font-medium">First Name</label>
+            <div className="flex flex-col w-[212px] h-[121px] ">
+              <label htmlFor="firstName" className="font-medium mb-[22px]">First Name</label>
               <input
                 type="text"
                 name="firstName"
                 value={formFields.firstName}
                 onChange={handleChange}
-                className={`w-[211px] h-[75px] rounded-xl border ${
+                className={`w-[211px] min-h-[75px] rounded-xl border ${
                   errors.firstName ? "border-red-500" : "border-gray50"
-                }`}
+                } px-[10px] `} // Removido o duplicado e adicionado min-h
               />
-              {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
+              {errors.firstName && (
+                <p className="text-red-500 text-[12px] mt-2">{errors.firstName}</p> // Margem ajustada para o erro
+              )}
             </div>
 
-            <div className="flex flex-col w-[212px] h-[121px] gap-[22px]">
-              <label htmlFor="lastName" className="font-medium">Last Name</label>
+
+            <div className="flex flex-col w-[212px] h-[121px] ">
+              <label htmlFor="lastName" className="font-medium mb-[22px]">Last Name</label>
               <input
                 type="text"
                 name="lastName"
                 value={formFields.lastName}
                 onChange={handleChange}
-                className={`w-[211px] h-[75px] rounded-xl border ${
+                className={`w-[211px] min-h-[75px] rounded-xl border  ${
                   errors.lastName ? "border-red-500" : "border-gray50"
-                }`}
+                } px-[10px]`}
               />
-              {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
+              {errors.lastName && <p className="text-red-500 text-[12px] mt-2">{errors.lastName}</p>}
             </div>
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="zipCode" className="font-medium">ZIP code</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="companyName" className="font-medium mb-[22px]">Company Name (Optionl)</label>
+            <input
+              type="text"
+              name="companyName"
+              value={formFields.companyName}
+              onChange={handleChange}
+              className={`w-[453px] h-[75px] rounded-xl border mt-[22px]${
+                errors.companyName ? "border-red-500" : "border-gray50"
+              } px-[10px]`}
+            />
+            {errors.companyName && <p className="text-red-500 text-[12px] mt-2">{errors.companyName}</p>}
+          </div>
+
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="zipCode" className="font-medium mb-[22px]">ZIP code</label>
             <input
               type="text"
               name="zipCode"
@@ -136,13 +153,13 @@ const CheckoutPage = () => {
               onChange={handleZipCodeChange} // Mudança no evento para chamar a função de CEP
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.zipCode ? "border-red-500" : "border-gray50"
-              }`}
+              } px-[10px]`}
             />
-            {errors.zipCode && <p className="text-red-500 text-sm">{errors.zipCode}</p>}
+            {errors.zipCode && <p className="text-red-500 text-[12px] mt-2">{errors.zipCode}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="country" className="font-medium">Country / Region</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="country" className="font-medium mb-[22px]">Country / Region</label>
             <input
               type="text"
               name="country"
@@ -150,13 +167,13 @@ const CheckoutPage = () => {
               onChange={handleChange}
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.country ? "border-red-500" : "border-gray50"
-              }`}
+              } px-[10px]`}
             />
-            {errors.country && <p className="text-red-500 text-sm">{errors.country}</p>}
+            {errors.country && <p className="text-red-500 text-[12px] mt-2">{errors.country}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="streetAddress" className="font-medium">Street Address</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="streetAddress" className="font-medium mb-[22px]">Street Address</label>
             <input
               type="text"
               name="streetAddress"
@@ -164,13 +181,13 @@ const CheckoutPage = () => {
               onChange={handleChange}
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.streetAddress ? "border-red-500" : "border-gray50"
-              }`}
+              } px-[10px]`}
             />
-            {errors.streetAddress && <p className="text-red-500 text-sm">{errors.streetAddress}</p>}
+            {errors.streetAddress && <p className="text-red-500 text-[12px] mt-2">{errors.streetAddress}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="city" className="font-medium">Town / City</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="city" className="font-medium mb-[22px]">Town / City</label>
             <input
               type="text"
               name="city"
@@ -178,13 +195,13 @@ const CheckoutPage = () => {
               onChange={handleChange}
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.city ? "border-red-500" : "border-gray50"
-              }`}
+              } px-[10px]`}
             />
-            {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
+            {errors.city && <p className="text-red-500 text-[12px] mt-2">{errors.city}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="province" className="font-medium">Province</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="province" className="font-medium mb-[22px]">Province</label>
             <input
               type="text"
               name="province"
@@ -192,24 +209,49 @@ const CheckoutPage = () => {
               onChange={handleChange}
               className={`w-[453px] h-[75px] rounded-xl border ${
                 errors.province ? "border-red-500" : "border-gray50"
-              }`}
+              } px-[10px]`}
             />
-            {errors.province && <p className="text-red-500 text-sm">{errors.province}</p>}
+            {errors.province && <p className="text-red-500 text-[12px] mt-2">{errors.province}</p>}
           </div>
 
-          <div className="flex flex-col w-[453px] h-[121px] gap-[22px]">
-            <label htmlFor="companyName" className="font-medium">Company Name</label>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="province" className="font-medium mb-[22px]">Add-on address</label>
             <input
               type="text"
-              name="companyName"
-              value={formFields.companyName}
+              name="address"
+              value={formFields.province}
               onChange={handleChange}
               className={`w-[453px] h-[75px] rounded-xl border ${
-                errors.companyName ? "border-red-500" : "border-gray50"
-              }`}
+                errors.province ? "border-red-500" : "border-gray50"
+              } px-[10px]`}
             />
-            {errors.companyName && <p className="text-red-500 text-sm">{errors.companyName}</p>}
+            {errors.province && <p className="text-red-500 text-[12px] mt-2">{errors.province}</p>}
           </div>
+
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <label htmlFor="province" className="font-medium mb-[22px]">Email address</label>
+            <input
+              type="email"
+              name="email"
+              value={formFields.email}
+              onChange={handleChange}
+              className={`w-[453px] h-[75px] rounded-xl border ${
+                errors.province ? "border-red-500" : "border-gray50"
+              } px-[10px]`}
+            />
+            {errors.province && <p className="text-red-500 text-[12px] mt-2">{errors.province}</p>}
+          </div>
+          <div className="flex flex-col w-[453px] h-[121px] ">
+            <input
+              type="text"
+              name="email"
+              placeholder="Additional information"
+              onChange={handleChange}
+              className={`w-[453px] h-[75px] rounded-xl border pl-[29px]`}
+            />
+          </div>
+
+          
 
         </div>
 
