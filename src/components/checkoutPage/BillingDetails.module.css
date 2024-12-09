@@ -1,0 +1,43 @@
+/* BillingDetails.module.css */
+.container {
+    @apply w-[608px] h-[1714px] pl-[75px] pt-[35px] flex flex-col gap-[36px];
+  }
+  
+  .header {
+    @apply font-semibold text-3xl;
+  }
+  
+  .inputContainer {
+    @apply flex flex-col w-[453px] h-[121px];
+  }
+  
+  .inputLabelName{
+    @apply  w-[221px] h-[75px]
+  }
+  .inputLabel {
+    @apply font-medium mb-[22px];
+  }
+  
+  .inputField {
+    @apply w-[453px] h-[75px] rounded-xl border px-[10px];
+  }
+  .inputFieldName {
+    @apply w-[211px] h-[75px] rounded-xl border px-[10px];
+  }
+  
+  .errorText {
+    @apply text-red-500 text-[12px] mt-2;
+  }
+  
+  .optionalLabel {
+    @apply font-medium mb-[22px];
+  }
+  
+  .optionalInput {
+    @apply w-[453px] h-[75px] rounded-xl border px-[10px];
+  }
+  
+  .additionalInfoInput {
+    @apply w-[453px] h-[75px] rounded-xl border pl-[29px] border-l-gray50;
+  }
+  

@@ -1,0 +1,57 @@
+/* Checkout.module.css */
+.container {
+    @apply w-full max-w-[608px] h-[789px] flex items-center justify-center;
+  }
+  
+  .card {
+    @apply w-full max-w-[533px] h-auto flex flex-col justify-between p-[16px];
+  }
+  
+  .summaryHeader {
+    @apply font-medium text-2xl;
+  }
+  
+  .productItem {
+    @apply flex w-full justify-between mt-[14px];
+  }
+  
+  .totalRow {
+    @apply flex w-full justify-between mt-[22px];
+  }
+  
+  .totalAmount {
+    @apply text-2xl font-bold text-textOrange;
+  }
+  
+  .separator {
+    @apply border border-b-gray50 mt-[33.5px] w-full mx-auto;
+  }
+  
+  .paymentOption {
+    @apply flex items-center gap-[15px];
+  }
+  
+  .paymentOptionLabel {
+    @apply inline-flex items-center cursor-pointer;
+  }
+  
+  .checkbox {
+    @apply opacity-0 ;
+  }
+  
+  .checkboxIcon {
+    @apply w-[14px] h-[14px] border border-black rounded-full peer-checked:bg-black -ml-[12px];
+  }
+  
+  .paymentInfo {
+    @apply font-light text-gray50;
+  }
+  
+  .placeOrderButton {
+    @apply w-[318px] h-[64px] text-[20px] rounded-[15px] border border-black mt-[17px] cursor-pointer;
+  }
+  
+  .termsText {
+    @apply font-light text-gray50;
+  }
+  

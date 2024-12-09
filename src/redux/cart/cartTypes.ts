@@ -1,6 +1,6 @@
-// Tipo para representar um item no carrinho
+// Type to represent an item in the cart
 export interface CartItem {
-  id: number;  // Modificado para string, se necessário
+  id: number; 
   price: number;
   quantity: number;
   productName: string;
@@ -9,9 +9,9 @@ export interface CartItem {
   
 }
   
-  // Tipo para o estado completo do carrinho
+  // Type for cart complete state
   export interface CartState {
-    items: CartItem[];  // Lista de itens no carrinho
-    totalAmount: number; // Valor total dos itens no carrinho
+    items: CartItem[];  // List of items in cart
+    totalAmount: number; //Total value of items in cart
   }
   

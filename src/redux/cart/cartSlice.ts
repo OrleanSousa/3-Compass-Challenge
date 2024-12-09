@@ -18,27 +18,27 @@ const cartSlice = createSlice({
       const existingItem = state.items.find((item) => item.id === action.payload.id);
       
       if (existingItem) {
-        // Se o item já existe, apenas atualiza a quantidade
+        // If the item already exists, just update the quantity
         existingItem.quantity += action.payload.quantity;
       } else {
-        // Se o item não existe, adiciona ao carrinho
+        //If the item does not exist, add it to the cart
         state.items.push({ ...action.payload, quantity: action.payload.quantity });
       }
       
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
-      // Remove um item pelo ID
+      // Remove an item by ID
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
     clearCart: (state) => {
-      // Remove todos os itens do carrinho
+      // Remove all items from the cart
       state.items = [];
     },
     updateQuantity: (state, action: PayloadAction<{ id: number; quantity: number }>) => {
       const item = state.items.find((item) => item.id === action.payload.id);
 
       if (item) {
-        // Atualiza a quantidade
+        // Update quantity
         item.quantity = action.payload.quantity;
       }
     },

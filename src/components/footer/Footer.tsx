@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FacebookVector from '../../assets/FacebookVector.svg';
 import InstaVector from '../../assets/instaVector.svg';
 import LinkedinVector from '../../assets/linkedinVector.svg';
@@ -48,24 +49,24 @@ const Footer = () => {
                 <p className="mb-[55px] text-gray50">Links</p>
                 <ul className={styles.linksList}>
                   <li>
-                    <a href="" className="font-bold">
+                    <Link to="/" className="font-bold">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="" className="font-bold">
+                    <Link to='/shop' className="font-bold">
                       Shop
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="" className="font-bold">
+                    <Link to='#' className="font-bold">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="" className="font-bold">
+                    <Link to='/contact' className="font-bold">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
