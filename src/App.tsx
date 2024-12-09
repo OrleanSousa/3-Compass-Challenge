@@ -5,6 +5,8 @@ import Shop from './pages/Shop'
 import CheckOut from './pages/CheckOut'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
+import ProtectedRoute from './components/ProtectRoute'; // Ajuste o caminho conforme necessário
+
 
 
 function App() {
@@ -17,7 +19,14 @@ function App() {
       <Route path="/product/:id" element={<Product />} />
       <Route path='/contact' element={<Contacts/>}/>
       <Route path='/cart' element={<Cart/>}/>
-      <Route path='/checkout' element={<CheckOut/>}/>
+      <Route
+          path='/checkout'
+          element={
+            <ProtectedRoute>
+              <CheckOut />
+            </ProtectedRoute>
+          }
+        />
       <Route path='/product' element={<Product/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>

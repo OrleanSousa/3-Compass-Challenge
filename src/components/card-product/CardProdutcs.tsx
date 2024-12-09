@@ -44,7 +44,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation(); // Impede a propagação do clique para o Link
-    console.log("Adding to cart:", id);
     dispatch(addToCart({
       id,
       productName,
