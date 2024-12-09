@@ -1,5 +1,4 @@
 import { RiDeleteBin7Fill } from "react-icons/ri";
-import sofa from "../../assets/sofa5.png";
 import { useDispatch, useSelector } from "react-redux"; // Importando useDispatch e useSelector
 import { removeFromCart, updateQuantity } from "../../redux/cart/cartSlice"; // Importando as ações
 import { RootState } from "../../redux/store"; // Importando o tipo do estado
@@ -49,7 +48,7 @@ const CartPage: React.FC = () => {
                 <div key={item.id} className="w-full flex items-center gap-[20px] py-[15px]">
                   {/* Imagem */}
                   <div className="bg-buttonBord bg-opacity-[0.22] rounded-[10px] w-[105px] h-[105px] flex justify-center items-center">
-                    <img src={sofa} alt={item.productName
+                    <img src={item.image} alt={item.productName
 
                     } />
                   </div>

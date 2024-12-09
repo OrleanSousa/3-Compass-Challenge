@@ -1,44 +1,40 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalf } from "react-icons/fa";
+import { FaStar, FaStarHalf,FaFacebook, FaLinkedin  } from "react-icons/fa";
 import { updateQuantity, removeFromCart, addToCart } from "../../redux/cart/cartSlice";
 import { CartItem } from "../../redux/cart/cartTypes";
 import { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { FaFacebook,  FaLinkedin  } from "react-icons/fa";
+import { useEffect } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import card1 from '../../assets/sofa5.png'
-import ProductCard from "../card-product/CardProdutcs";
-import products from "../../../public/data/products.json";
+import card1 from '../../assets/sofa5.png';
+import products from "../../data/products.json";
 import ButtonCard from "../homepage/outproducts/ButtonCard";
-
+import ProductCard from "../card-product/CardProdutcs";
+import { setProduct } from "../../redux/cart/productSlice";
 
 
 const SingleProduct = () => {
-  
   const { id } = useParams();  // Recebe o id do produto via URL
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.items);
   
-  // Estado para armazenar os dados do produto
-  const [product, setProduct] = useState<CartItem | undefined>(undefined);
+  // Obter o produto diretamente do Redux
+  const product = useSelector((state: RootState) => state.product.product);
 
-  // Função para buscar os dados do produto
-  const fetchProductData = async (productId: string) => {
-    try {
-      // Substitua pelo caminho real para seu arquivo JSON ou API
-      const response = await fetch(`../../data/products.json`);
-      const data = await response.json();
-      const productData = data.find((product: CartItem) => product.id === parseInt(productId));
-      setProduct(productData);
-    } catch (error) {
-      console.error("Erro ao carregar os dados", error);
-    }
-  };
 
   useEffect(() => {
+    const fetchProductData = async (productId: string) => {
+      try {
+        const response = await fetch(`../../data/products.json`);
+        const data = await response.json();
+        const productData = data.find((product: CartItem) => product.id === parseInt(productId));
+        setProduct(productData);
+      } catch (error) {
+        console.error("Erro ao carregar os dados", error);
+      }
+    };
+  
     if (id) {
       fetchProductData(id);
     }
@@ -49,10 +45,8 @@ const SingleProduct = () => {
     if (product) {
       const existingProduct = cart.find(item => item.id === product.id);
       if (existingProduct) {
-        // Se o produto já existe no carrinho, atualizamos a quantidade
         dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity + 1 }));
       } else {
-        // Se não existe, adicionamos ao carrinho com quantidade 1
         dispatch(addToCart({ ...product, quantity: 1 }));
       }
     }
@@ -60,21 +54,19 @@ const SingleProduct = () => {
 
   // Função para diminuir a quantidade
   const decreaseQuantity = (product: CartItem) => {
-    
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct && existingProduct.quantity > 0) {
       dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity - 1 }));
     } else if (existingProduct) {
-      // Se a quantidade for 1, removemos o item
       dispatch(removeFromCart(product.id));
     }
   };
 
   // Função para aumentar a quantidade
-  const increaseQuantity = (product: CartItem) => {
-    const existingProduct = cart.find(item => item.id === product.id);
+  const increaseQuantity = (products: CartItem) => {
+    const existingProduct = cart.find(item => item.id === products.id);
     if (existingProduct) {
-      dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity + 1 }));
+      dispatch(updateQuantity({ id: products.id, quantity: existingProduct.quantity + 1 }));
     }
   };
 
@@ -105,21 +97,21 @@ const SingleProduct = () => {
           <div className="w-[553px] h-[500px] flex">
             <div className="w-[76px] h-[416px] flex flex-col justify-between">
               <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px] overflow-hidden flex">
-                <img src={card1} alt={product.productName} className="w-[83px] h-[55px] self-center"/>
+                <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center  rounded-[10px]"/>
               </div>
-              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
-                <img src={product.image} alt={product.productName} />
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]  overflow-hidden flex">
+                <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center  rounded-[10px]" />
               </div>
-              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
-                <img src={product.image} alt={product.productName} />
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]  overflow-hidden flex">
+                <img src={product.image} alt={product.productName}  className="w-[83px] h-[55px] self-center rounded-[10px]"/>
               </div>
-              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]">
-                <img src={product.image} alt={product.productName} />
+              <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]  overflow-hidden flex">
+                <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center rounded-[10px]"/>
               </div>
             </div>
             <div className="w-[477px] h-[500px] flex justify-center">
               <div className="w-[419px] h-[500px] bg-buttonShop rounded-[10px] flex items-center overflow-hidden">
-                <img src={card1} alt={product.productName} className="w-[477px] h-[391px] self-center" />
+                <img src={product.image} alt={product.productName} className="w-[477px] h-[391px] self-center rounded-[10px]" />
               </div>
             </div>
           </div>
@@ -268,3 +260,5 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
+
+

@@ -5,12 +5,12 @@ import userVeto from '../../assets/userVetor.svg';
 import cardVetor from '../../assets/cartVetor.svg';
 import { Link } from 'react-router-dom';
 import CartModal from '../modal/Modal'; // Importar o modal
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser} from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, UserButton} from '@clerk/clerk-react';
  
 
 
 const Header: React.FC = () => {
-  const { user } = useUser(); // Obtém informações do usuário logado
+  
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);

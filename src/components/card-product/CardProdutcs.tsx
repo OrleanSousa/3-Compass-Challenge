@@ -1,5 +1,4 @@
 import React from 'react';
-import card1 from '../../assets/foto1.png';
 import { IoMdShare } from "react-icons/io";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
@@ -16,7 +15,7 @@ interface ProductCardProps {
   originalPrice?: number;
   discount?: number;
   isNew?: boolean;
-  image?: string;
+  image: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -27,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   originalPrice = 0,
   discount,
   isNew,
-  image = card1, 
+  image, 
 }) => {
   const dispatch = useDispatch(); 
 
@@ -38,6 +37,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       description,
       price,
       image,
+      quantity: 1,    
+      
     }));
   };
 
@@ -72,7 +73,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           )}
           <img
-            src={card1} 
+            src={image} 
             alt={productName}
             className="w-[285px] h-[301px] object-cover"
           />

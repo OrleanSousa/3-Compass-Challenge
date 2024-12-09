@@ -6,6 +6,7 @@ export interface CartItem {
   productName: string;
   image?: string;
   description?: string;
+  
 }
   
   // Tipo para o estado completo do carrinho
