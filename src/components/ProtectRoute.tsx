@@ -3,7 +3,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 
-// Componente de Loading para exibir durante o carregamento
+// Loading component to display during loading
 const Loading = () => (
   <div className="flex items-center justify-center h-screen">
     <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary"></div>
@@ -14,17 +14,17 @@ const Loading = () => (
 function ProtectedRoute({ children }) {
   const { isSignedIn, isLoaded } = useUser();
 
-  // Se o estado de autenticação ainda estiver carregando, mostra a tela de carregamento
+  //If authentication state is still loading, show loading screen
   if (!isLoaded) {
     return <Loading />;
   }
 
-  // Se o usuário não está autenticado, redireciona para a página 403
+  // If the user is not authenticated, it redirects to the 403 page
   if (!isSignedIn) {
     return <Navigate to="/403" replace />;
   }
 
-  // Caso esteja autenticado e o estado carregado, renderiza o componente filho
+  // If authenticated and the state is loaded, render the child component
   return children;
 }
 

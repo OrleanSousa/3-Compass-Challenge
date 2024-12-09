@@ -55,13 +55,13 @@ const FeaturedCarousel = () => {
     <Splide
       options={{
         pauseOnHover: true,
-        arrows: true, // Habilita as setas
-        pagination: true, // Desativa a paginação
+        arrows: true, 
+        pagination: true, 
         gap: '24px',
         perPage: 3,
         perMove: 1,
         rewind: true,
-        loop: true, // Habilita a rolagem infinita
+        loop: true, 
       }}
       aria-label="Featured Products"
       className="mx-auto max-w-7xl"
@@ -86,7 +86,7 @@ const FeaturedCarousel = () => {
                 <h2 className="text-[28px] font-semibold mt-2">{slide.title}</h2>
                 <div
                   className="bg-buttonBord absolute w-[48px] h-[48px] flex 
-                justify-center items-center bottom-0 -right-[48px]" // Seta à direita
+                justify-center items-center bottom-0 -right-[48px]" 
                 >
                   <HiOutlineArrowSmallRight size={30} className='text-white'/>
                 </div>

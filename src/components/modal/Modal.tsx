@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux"; // Importing useDispatch
 import { IoIosCloseCircle } from "react-icons/io"; // Icon to remove item from cart
 import { Link } from "react-router-dom"; // For navigation to other pages
 import { removeFromCart } from "../../redux/cart/cartSlice"; // Importing the removeFromCart action
-import card1 from '../../assets/foto1.png'; // Default product image
 import { CartItem } from "../../redux/cart/cartTypes"; // CartItem type
 import { RootState } from "../../redux/store"; // Importing the global state type
 
@@ -44,7 +43,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, closeModal }) => {
               <div className="flex items-center gap-[32px]">
                 {/* Product image */}
                 <img
-                  src={item.image || card1} // Use the product image, if not, use the default image
+                  src={item.image} // Use the product image, if not, use the default image
                   alt={item.productName}
                   className="w-16 h-16 object-cover rounded-md"
                 />

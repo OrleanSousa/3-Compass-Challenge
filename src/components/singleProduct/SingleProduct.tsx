@@ -7,7 +7,6 @@ import { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import card1 from '../../assets/sofa5.png';
 import products from "../../data/products.json";
 import ButtonCard from "../homepage/outproducts/ButtonCard";
 import ProductCard from "../card-product/CardProdutcs";
@@ -228,10 +227,10 @@ const SingleProduct = () => {
         </div>
         <div className="w-[1239px] h-[348px] flex justify-between ">
           <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
-            <img src={card1} alt="" className="w-[605px] h-[348px]"/>
+            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/sofa5.png" alt="" className="w-[605px] h-[348px]"/>
           </div>
           <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
-            <img src={card1} alt="" className="w-[605px] h-[348px]"/>
+            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/sofa5.png" alt="" className="w-[605px] h-[348px]"/>
           </div>
         </div>
       </div>

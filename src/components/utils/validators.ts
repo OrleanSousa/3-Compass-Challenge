@@ -1,25 +1,25 @@
-// Função para validar campos
+// Function to validate fields
 export const validateField = (name: string, value: string) => {
   let error = "";
 
   switch (name) {
     case "firstName":
     case "lastName":
-      // Validação para aceitar apenas letras
+      // Validation to accept letters only
       if (!/^[A-Za-zÀ-ÿ\s]*$/.test(value)) {
         error = "This field can only contain letters.";
       }
       break;
     
     case "zipCode":
-      // Validação para o formato do CEP
+      // Validation for zip code format
       if (!/^\d{5}-\d{3}$/.test(value)) {
         error = "ZIP code must follow the format 00000-000.";
       }
       break;
 
     case "email":
-      // Validação para o formato de email
+      // Validation for email format
       if (!/\S+@\S+\.\S+/.test(value)) {
         error = "Please enter a valid email address.";
       }
@@ -32,14 +32,14 @@ export const validateField = (name: string, value: string) => {
   return error;
 };
 
-// Função para formatar valores (como CEP)
+// Function to format values such as ZIP code
 export const formatFieldValue = (name: string, value: string) => {
   let formattedValue = value;
 
-  // Formatar o campo de CEP para o formato 00000-000
+  // Format the zip code field to the format 00000-000
   if (name === "zipCode") {
-    formattedValue = value.replace(/\D/g, "") // Remove caracteres não numéricos
-                          .replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen
+    formattedValue = value.replace(/\D/g, "") // Remove non-numeric characters
+                          .replace(/(\d{5})(\d)/, "$1-$2"); // Add the hyphen
   }
 
   return formattedValue;

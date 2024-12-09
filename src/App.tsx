@@ -5,7 +5,7 @@ import Shop from './pages/Shop'
 import CheckOut from './pages/CheckOut'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
-import ProtectedRoute from './components/ProtectRoute'; // Ajuste o caminho conforme necessário
+import ProtectedRoute from './components/ProtectRoute'; 
 
 
 
