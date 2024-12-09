@@ -1,9 +1,9 @@
 import { RiDeleteBin7Fill } from "react-icons/ri";
-import sofa from "../../assets/sofa5.png";
 import { useDispatch, useSelector } from "react-redux"; // Importando useDispatch e useSelector
 import { removeFromCart, updateQuantity } from "../../redux/cart/cartSlice"; // Importando as ações
 import { RootState } from "../../redux/store"; // Importando o tipo do estado
 import { CartItem } from "../../redux/cart/cartTypes";
+import { Link } from "react-router-dom";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const CartPage: React.FC = () => {
                 <div key={item.id} className="w-full flex items-center gap-[20px] py-[15px]">
                   {/* Imagem */}
                   <div className="bg-buttonBord bg-opacity-[0.22] rounded-[10px] w-[105px] h-[105px] flex justify-center items-center">
-                    <img src={sofa} alt={item.productName
+                    <img src={item.image} alt={item.productName
 
                     } />
                   </div>
@@ -118,9 +118,12 @@ const CartPage: React.FC = () => {
                 {cart.reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0).toLocaleString()}
               </p>
             </div>
-            <button className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">
+            <Link to='/checkout'>
+            
+            <button  className="w-[222px] h-[58.95px] rounded-[15px] border border-black text-[20px]">
               Check Out
             </button>
+            </Link>
           </div>
         </div>
       </div>

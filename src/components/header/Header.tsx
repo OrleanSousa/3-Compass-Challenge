@@ -5,10 +5,13 @@ import userVeto from '../../assets/userVetor.svg';
 import cardVetor from '../../assets/cartVetor.svg';
 import { Link } from 'react-router-dom';
 import CartModal from '../modal/Modal'; // Importar o modal
+import { SignedIn, SignedOut, SignInButton, UserButton} from '@clerk/clerk-react';
+ 
+
 
 const Header: React.FC = () => {
+  
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
@@ -30,14 +33,27 @@ const Header: React.FC = () => {
         </div>
 
         {/* User and Cart Icons */}
-        <div className={styles.icons}>
-          <a href="#">
-            <img src={userVeto} alt="User" className={styles.icon} />
-          </a>
-          <a href="#" onClick={openModal}>
-            <img src={cardVetor} alt="Cart" className={styles.icon} />
-          </a>
-        </div>
+      
+      <div className={styles.icons}>
+      {/* Exibe a foto do usuário logado */}
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+
+      {/* Botão para login, exibido apenas se não estiver logado */}
+      <SignedOut>
+        <SignInButton mode="modal">
+          <img src={userVeto} alt="User" className={styles.icon} />
+        </SignInButton>
+      </SignedOut>
+
+      {/* Ícone do carrinho */}
+      <a href="#" onClick={openModal}>
+        <img src={cardVetor} alt="Cart" className={styles.icon} />
+      </a>
+    </div>
+
+
       </div>
 
       {/* Modal */}
