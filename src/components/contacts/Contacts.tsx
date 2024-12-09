@@ -4,14 +4,15 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { useState } from "react";
 import styles from './Contacts.module.css'; // Importando o módulo CSS
 
+
+
 // Função de validação
 const validateField = (name: string, value: string) => {
   if (name === "firstName") {
     if (!value.trim()) {
       return "Name is required";
     }
-    // Verifica se o nome contém apenas letras
-    const nameRegex = /^[A-Za-z\s]+$/; // Permite apenas letras e espaços
+    const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(value)) {
       return "Name must contain only letters";
     }
@@ -25,7 +26,9 @@ const validateField = (name: string, value: string) => {
       return "Invalid email format";
     }
   }
-
+  if (name === "message" && !value.trim()) {
+    return "Message is required";
+  }
   return "";
 };
 
@@ -40,29 +43,23 @@ const Contacts = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Função de alteração de campo
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-
-    // Atualiza o valor do campo
     setFormFields((prevFields) => ({
       ...prevFields,
       [name]: value,
     }));
-
-    // Validar o campo
-    const error = validateField(name, value, );
+    const error = validateField(name, value);
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
-      
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validar todos os campos antes de enviar o formulário
     const formErrors: Record<string, string> = {};
     Object.keys(formFields).forEach((key) => {
       const error = validateField(key, formFields[key]);
@@ -71,12 +68,18 @@ const Contacts = () => {
       }
     });
 
-    // Se houver erros, não envia o formulário
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
     } else {
-      // Enviar o formulário (simulado aqui)
       alert("Form submitted!");
+      // Limpa os campos após o envio
+      setFormFields({
+        key: "",
+        firstName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     }
   };
 

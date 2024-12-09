@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./SecondSection.module.css"; // Importando o módulo CSS
 
 const SecondSection = () => {

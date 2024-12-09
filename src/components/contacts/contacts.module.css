@@ -28,7 +28,7 @@
   }
   
   .inputContainer {
-    @apply w-[530px] h-[121px] flex flex-col;
+    @apply w-[530px] h-[166px] flex flex-col;
   }
   
   .input {
@@ -44,5 +44,9 @@
   }
   
   .submitButton {
-    @apply bg-textOrange w-[237px] h-[55px] text-white rounded-md;
+    @apply bg-textOrange w-[237px] h-[55px] text-white rounded-md mt-[49px];
+  }
+
+  .textarea{
+    @apply w-[527px] h-[120px] border rounded-[10px] flex pt-[26px] pl-[30px] 
   }

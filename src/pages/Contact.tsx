@@ -1,4 +1,3 @@
-import React from 'react'
 import Contacts from '../components/contacts/Contacts'
 import Header from '../components/header/Header'
 import SubHeader from '../components/subHeader/SubHeader'

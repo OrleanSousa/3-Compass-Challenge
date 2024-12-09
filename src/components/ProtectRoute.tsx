@@ -1,7 +1,7 @@
 // ProtectedRoute.js
-import React from "react";
 import { Navigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
+import { ReactNode } from "react";
 
 // Loading component to display during loading
 const Loading = () => (
@@ -11,7 +11,7 @@ const Loading = () => (
   </div>
 );
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute({ children }: { children: ReactNode }) {
   const { isSignedIn, isLoaded } = useUser();
 
   //If authentication state is still loading, show loading screen
