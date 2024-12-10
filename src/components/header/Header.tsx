@@ -45,7 +45,7 @@ const Header: React.FC = () => {
         <SignInButton mode="modal">
           <img src={userVeto} alt="User" className={styles.icon} />
         </SignInButton>
-      </SignedOut>
+      </SignedOut>  
 
       {/* Ícone do carrinho */}
       <a href="#" onClick={openModal}>

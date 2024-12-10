@@ -1,12 +1,11 @@
 import React from 'react';
-import { IoMdShare } from "react-icons/io";
-import { TbArrowsLeftRight } from "react-icons/tb";
-import { FaRegHeart } from "react-icons/fa";
+
 import { useDispatch } from 'react-redux'; 
 import { addToCart } from '../../redux/cart/cartSlice'; 
 import { setProduct } from '../../redux/cart/productSlice'; 
 import { Link } from 'react-router-dom'; 
 import styles from './ProductCard.module.css'; // Importando o módulo CSS
+import { FaSearch } from 'react-icons/fa';
 
 interface ProductCardProps {
   id: number;
@@ -82,18 +81,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
           Add to cart
         </button>
         <div className={styles.iconContainer}>
-          <span className="cursor-pointer flex items-center gap-[2px]">
-            <IoMdShare size={16} />
-            Share
-          </span>
-          <span className="cursor-pointer flex items-center gap-[3px]">
-            <TbArrowsLeftRight size={16} />
-            Compare
-          </span>
-          <span className="cursor-pointer flex items-center gap-[3px]">
-            <FaRegHeart size={16} />
-            Like
-          </span>
+          
+          <Link to={`/product/${id}`} onClick={handleCardClick} className="cursor-pointer flex items-center gap-[3px] m-auto text-white">
+            <FaSearch  size={16} />
+            Description
+          </Link>
+          
         </div>
       </div>
 
