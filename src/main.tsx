@@ -19,9 +19,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-        <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-          <App />
-        </ClerkProvider>
+          <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+            <App />
+          </ClerkProvider>
         </BrowserRouter>
       </Provider>
   </StrictMode>

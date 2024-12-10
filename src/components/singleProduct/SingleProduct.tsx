@@ -5,7 +5,7 @@ import { updateQuantity, removeFromCart, addToCart } from "../../redux/cart/cart
 import { CartItem } from "../../redux/cart/cartTypes";
 import { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import products from "../../data/products.json";
 import ButtonCard from "../homepage/outproducts/ButtonCard";
@@ -20,6 +20,17 @@ const SingleProduct = () => {
   
   // Get the product directly from Redux
   const product = useSelector((state: RootState) => state.product.product);
+
+  const [selectedColor, setSelectedColor] = useState<string | null>(null); // Estado para a cor selecionada
+
+  const handleColorSelect = (color: string) => {
+    setSelectedColor(color); // Atualiza a cor selecionada
+  };
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+  const handleSizeSelect = (size: string) => {
+    setSelectedSize(size);
+  };
 
 
   useEffect(() => {
@@ -137,22 +148,63 @@ const SingleProduct = () => {
             </div>
 
             <div className="flex flex-col gap-[12px] mb-[18px]">
-              <p className="text-gray50 text-[14px]">Size</p>
-              <div className="flex w-[123px] h-[30px] justify-between">
-                <div className="w-[30px] h-[30px] bg-buttonBord rounded-[5px] flex justify-center items-center">L</div>
-                <div className="w-[30px] h-[30px] bg-backFilter rounded-[5px] flex justify-center items-center">XL</div>
-                <div className="w-[30px] h-[30px] bg-backFilter rounded-[5px] flex justify-center items-center">XS</div>
-              </div>
-            </div>
+      <p className="text-gray50 text-[14px]">Size</p>
+      <div className="flex w-[123px] h-[30px] justify-between">
+        <div
+          className={`w-[30px] h-[30px] rounded-[5px] flex justify-center items-center ${
+            selectedSize === "L" ? "bg-buttonBord  text-white" : "bg-backFilter"
+          }`}
+          onClick={() => handleSizeSelect("L")}
+        >
+          L
+        </div>
+        <div
+          className={`w-[30px] h-[30px] rounded-[5px] flex justify-center items-center ${
+            selectedSize === "XL" ? "bg-buttonBord text-white" : "bg-backFilter"
+          }`}
+          onClick={() => handleSizeSelect("XL")}
+        >
+          XL
+        </div>
+        <div
+          className={`w-[30px] h-[30px] rounded-[5px] flex justify-center items-center ${
+            selectedSize === "XS" ? "bg-buttonBord  text-white" : "bg-backFilter"
+          }`}
+          onClick={() => handleSizeSelect("XS")}
+        >
+          XS
+        </div>
+      </div>
+    </div>
 
             <div className="flex flex-col gap-[12px]">
-              <p className="text-gray50 text-[14px]">Color</p>
-              <div className="flex w-[123px] h-[30px] justify-between">
-                <div className="w-[30px] h-[30px] bg-circleroxo rounded-full flex justify-center items-center"></div>
-                <div className="w-[30px] h-[30px] bg-black rounded-full flex justify-center items-center"></div>
-                <div className="w-[30px] h-[30px] bg-buttonBord rounded-full flex justify-center items-center"></div>
-              </div>
-            </div>
+      <p className="text-gray50 text-[14px]">Color</p>
+      <div className="flex w-[123px] h-[30px] justify-between">
+        {/* Opção de cor: Roxo */}
+        <div
+          className={`w-[30px] h-[30px] bg-circleroxo rounded-full flex justify-center items-center cursor-pointer ${
+            selectedColor === "roxo" ? "border-2 border-red-700" : ""
+          }`}
+          onClick={() => handleColorSelect("roxo")}
+        ></div>
+
+        {/* Opção de cor: Preto */}
+        <div
+          className={`w-[30px] h-[30px] bg-black rounded-full flex justify-center items-center cursor-pointer ${
+            selectedColor === "black" ? "border-2 border-red-700" : ""
+          }`}
+          onClick={() => handleColorSelect("black")}
+        ></div>
+
+        {/* Opção de cor: buttonBord */}
+        <div
+          className={`w-[30px] h-[30px] bg-buttonBord rounded-full flex justify-center items-center cursor-pointer ${
+            selectedColor === "buttonBord" ? "border-2 border-red-700" : ""
+          }`}
+          onClick={() => handleColorSelect("buttonBord")}
+        ></div>
+      </div>
+    </div>
 
             <div className="flex mt-[32px] gap-[10px]">
               <div className="flex items-center border border-gray50 rounded-[10px] px-4 py-2 w-[123px] h-[64px] justify-between">
