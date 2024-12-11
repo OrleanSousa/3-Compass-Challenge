@@ -24,7 +24,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, closeModal }) => {
   const subtotal = cart.reduce((acc: number, item: CartItem) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="fixed top-0 right-0 m-6 bg-white shadow-lg rounded-md w-[400px] h-[746px] p-4 z-10">
+    <div className="absolute top-0 right-0 m-6 bg-white shadow-lg rounded-md w-[400px] h-[746px] p-4 z-10">
       {/* Close button at the top right */}
       <button
         onClick={closeModal}
