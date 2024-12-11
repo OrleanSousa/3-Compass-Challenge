@@ -1,109 +1,156 @@
-# React + TypeScript + Vite
+# 3 Challenger from Compass
 
-This template provides a minimal setup to get React working in Vite with HMR (Hot Module Replacement) and some ESLint rules.
+Este projeto foi criado utilizando **React** com **TypeScript** e várias bibliotecas modernas para desenvolvimento frontend. O objetivo principal foi reproduzir uma cópia de um e-commerce para aplicar e consolidar as tecnologias aprendidas ao longo do curso. Abaixo você encontrará instruções para configuração, execução e descrição das principais dependências utilizadas no projeto.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.
+## Tecnologias Utilizadas
 
-## Expanding the ESLint Configuration
+- **React**: Biblioteca para criação de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **TailwindCSS**: Framework CSS para estilização rápida e responsiva.
+- **Redux Toolkit**: Gerenciamento de estado simplificado e eficiente.
+- **React Router DOM**: Controle de rotas no frontend.
+- **Clerk**: Autenticação e gerenciamento de usuários.
+- **React Hook Form**: Gerenciamento de formulários com validação eficiente.
+- **Yup**: Biblioteca para validação de esquemas e dados.
+- **Axios**: Cliente HTTP para consumo de APIs.
+- **Swiper**: Criação de sliders responsivos e interativos.
+- **SplideJS**: Alternativa leve para sliders/carrosséis.
 
-If you are developing a production application, we recommend updating the ESLint configuration to enable type-aware lint rules. Here's how to do it:
+---
 
-1. **Configure the top-level `parserOptions` property** in the ESLint config:
+## Requisitos
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-Replace tseslint.configs.recommended with tseslint.configs.recommendedTypeChecked or tseslint.configs.strictTypeChecked.
+Certifique-se de ter instalado em sua máquina:
 
-Optionally, add ...tseslint.configs.stylisticTypeChecked to include stylistic rules for TypeScript.
+- Node.js (versão 18 ou superior recomendada)
+- npm ou yarn (gerenciador de pacotes)
 
-Install the eslint-plugin-react and update the ESLint config:
+---
 
-js
-Copiar código
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Instalação
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-Setup
-Follow these steps to get the project up and running on your local machine.
+1. Clone o repositório:
 
-Prerequisites
-Ensure you have the following installed:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
 
-Node.js (v16 or later)
-npm (comes with Node.js)
-Installation
-Clone the repository:
+2. Navegue até o diretório do projeto:
 
-bash
-Copiar código
-git clone https://github.com/your-username/3-challegen-compass.git
-Navigate into the project directory:
+   ```bash
+   cd seu-repositorio
+   ```
 
-bash
-Copiar código
-cd 3-challegen-compass
-Install dependencies:
+3. Instale as dependências:
 
-bash
-Copiar código
-npm install
-Scripts
-npm run dev: Start the development server with Vite.
-npm run build: Compile the project for production using TypeScript and Vite.
-npm run lint: Run ESLint to lint the codebase.
-npm run preview: Preview the production build.
-npm run watch:tailwind: Watch for changes in Tailwind CSS files and rebuild the output.
-npm run server: Start a mock JSON server for API calls (default port: 5000).
-npm run start: Start the development server, Tailwind watcher, and the mock server in parallel.
-Running the Project
-To run the project locally:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-bash
-Copiar código
-npm run start
-This command will:
+---
 
-Start the Vite development server (npm run dev).
-Watch and compile the TailwindCSS files (npm run watch:tailwind).
-Start the mock API server using json-server (npm run server).
-You can now access the app at http://localhost:3000 in your browser.
+## Scripts Disponíveis
 
-Dependencies
-Frontend
-React: v18.3.1
-React Router: v7.0.1 for routing between views.
-Redux Toolkit: v2.4.0 for state management.
-React Hook Form: v7.54.0 for form handling.
-Yup: v1.5.0 for schema-based form validation.
-Styling
-TailwindCSS: v3.4.15 for utility-first styling.
-PostCSS and Autoprefixer for CSS post-processing.
-Dev Tools
-ESLint: v9.15.0 for linting JavaScript and React code.
-Vite: v6.0.1 for fast development and production builds.
-JSON Server: Mock backend for local development.
+### Iniciar o Projeto
+
+Para iniciar o servidor de desenvolvimento:
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+O projeto estará disponível em: [http://localhost:3000](http://localhost:3000)
+
+### Build
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+# ou
+yarn build
+```
+
+### Lint
+
+Para verificar o código com ESLint:
+
+```bash
+npm run lint
+# ou
+yarn lint
+```
+
+---
+
+## Estrutura do Projeto
+
+```plaintext
+src/
+├── components/   # Componentes reutilizáveis
+├── pages/        # Páginas do projeto
+├── hooks/        # Hooks personalizados
+├── store/        # Configuração e slices do Redux
+├── styles/       # Estilos globais e configurações do TailwindCSS
+├── utils/        # Funções utilitárias
+└── App.tsx       # Componente principal
+```
+
+---
+
+## Dependências
+
+### Principais Dependências
+
+- **@clerk/clerk-react**: Gerenciamento de autenticação e usuários.
+- **@headlessui/react**: Componentes acessíveis e sem estilização.
+- **@heroicons/react**: Ícones otimizados para React.
+- **@reduxjs/toolkit**: Ferramentas modernas para Redux.
+- **axios**: Para requisições HTTP.
+- **react-hook-form**: Simplificação do gerenciamento de formulários.
+- **yup**: Validação de dados e esquemas.
+- **swiper** e **splidejs**: Criação de sliders/carrosséis.
+
+### Ferramentas de Estilo
+
+- **TailwindCSS**: Estilização baseada em classes utilitárias.
+- **PostCSS** e **Autoprefixer**: Processamento e compatibilidade CSS.
+
+---
+
+## Contribuição
+
+1. Faça um fork do repositório.
+
+2. Crie uma branch para sua feature ou correção de bug:
+
+   ```bash
+   git checkout -b minha-branch
+   ```
+
+3. Commit suas alterações:
+
+   ```bash
+   git commit -m "Minha contribuição"
+   ```
+
+4. Envie suas alterações para o repositório remoto:
+
+   ```bash
+   git push origin minha-branch
+   ```
+
+5. Abra um Pull Request.
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
