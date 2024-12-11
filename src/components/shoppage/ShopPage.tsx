@@ -9,6 +9,18 @@ import { MdOutlineViewDay } from "react-icons/md";
 // Importa o custom hook
 import useProductSort from "../../hooks/useProductSort";
 
+interface Product {
+  productName: string;
+  description: string;
+  originalPrice: number | undefined;
+  discount: number | undefined;
+  isNew: boolean | undefined;
+  image: string;
+  id: number;
+  name: string;
+  price: number;
+}
+
 const ShopPages = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { sortedProducts, handleSortChange } = useProductSort(products); // Usando o hook personalizado
@@ -17,7 +29,7 @@ const ShopPages = () => {
   const [productLimit, setProductLimit] = useState<number>(16);
 
   // Controla a mudança do limite de produtos
-  const handleProductLimitChange = (e) => {
+  const handleProductLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const limit = parseInt(e.target.value, 10);
     setProductLimit(limit > 0 ? limit : 16); // Valor padrão caso seja inválido
   };
@@ -81,7 +93,7 @@ const ShopPages = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {sortedProducts
             .slice((currentPage - 1) * productLimit, currentPage * productLimit)
-            .map((product) => (
+            .map((product: Product) => (
               <ProductCard
                 key={product.id}
                 id={product.id}

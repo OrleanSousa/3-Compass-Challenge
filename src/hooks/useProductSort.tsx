@@ -11,7 +11,8 @@ const useProductSort = (products) => {
         sortedItems.sort((a, b) => a.price - b.price); // Ordena por preço do menor ao maior
         break;
       case "newest":
-        sortedItems.sort((a, b) => new Date(b.date) - new Date(a.date)); // Ordena pelos mais novos
+        sortedItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+ // Ordena pelos mais novos
         break;
       case "cheapest":
         sortedItems.sort((a, b) => a.price - b.price); // Mais baratos

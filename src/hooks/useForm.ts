@@ -1,6 +1,7 @@
 // useForm.ts
 import { useState } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useForm = (initialState: any) => {
   const [formFields, setFormFields] = useState(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
