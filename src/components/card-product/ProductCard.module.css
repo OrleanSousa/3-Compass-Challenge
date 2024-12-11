@@ -16,7 +16,8 @@
   }
   
   .hoverOverlay {
-    @apply absolute inset-0 bg-black bg-opacity-60 opacity-0 flex flex-col justify-center items-center transition-opacity duration-300 h-[301px];
+    @apply absolute inset-0 bg-black bg-opacity-60 opacity-0 flex flex-col justify-center 
+    items-center transition-opacity duration-300 h-[446px];
   }
   
   .addToCartButton {
