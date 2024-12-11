@@ -150,6 +150,10 @@ src/
 
 ---
 
+--- Link para o video de amostra----
+
+https://orlean2024.s3.us-east-2.amazonaws.com/Video+do+EC2/2024-12-11+16-19-41.mkv
+
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
