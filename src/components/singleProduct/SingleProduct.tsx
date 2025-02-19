@@ -1,7 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import { FaStar, FaStarHalf,FaFacebook, FaLinkedin  } from "react-icons/fa";
-import { updateQuantity, removeFromCart, addToCart } from "../../redux/cart/cartSlice";
+import { FaStar, FaStarHalf, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { updateQuantity, addToCart } from "../../redux/cart/cartSlice";
 import { CartItem } from "../../redux/cart/cartTypes";
 import { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,26 +12,27 @@ import ButtonCard from "../homepage/outproducts/ButtonCard";
 import ProductCard from "../card-product/CardProdutcs";
 import { setProduct } from "../../redux/cart/productSlice";
 
-
 const SingleProduct = () => {
-  const { id } = useParams();  // Receives the product id via URL
+  const { id } = useParams(); // Receives the product id via URL
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.items);
-  
+
   // Get the product directly from Redux
   const product = useSelector((state: RootState) => state.product.product);
 
   const [selectedColor, setSelectedColor] = useState<string | null>(null); // Estado para a cor selecionada
+  const [selectedSize, setSelectedSize] = useState<string | null>(null); // Estado para o tamanho selecionado
+
+  // Local state for the quantity before adding to the cart
+  const [quantity, setQuantity] = useState<number>(1); // Default quantity is 1
 
   const handleColorSelect = (color: string) => {
     setSelectedColor(color); // Atualiza a cor selecionada
   };
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const handleSizeSelect = (size: string) => {
-    setSelectedSize(size);
+    setSelectedSize(size); // Atualiza o tamanho selecionado
   };
-
 
   useEffect(() => {
     const fetchProductData = async (productId: string) => {
@@ -44,40 +45,37 @@ const SingleProduct = () => {
         console.error("Erro ao carregar os dados", error);
       }
     };
-  
+
     if (id) {
       fetchProductData(id);
     }
   }, [id]);
 
-  // Add to cart function
+  // Handle Add to Cart
   const handleAddToCart = () => {
     if (product) {
       const existingProduct = cart.find(item => item.id === product.id);
       if (existingProduct) {
-        dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity + 1 }));
+        // Update the quantity if the product already exists in the cart
+        dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity + quantity }));
       } else {
-        dispatch(addToCart({ ...product, quantity: 1 }));
+        // Add new product to cart with selected quantity
+        dispatch(addToCart({ ...product, quantity }));
       }
+      setQuantity(1); // Reset quantity after adding
     }
   };
 
-  // Function to decrease quantity
-  const decreaseQuantity = (product: CartItem) => {
-    const existingProduct = cart.find(item => item.id === product.id);
-    if (existingProduct && existingProduct.quantity > 0) {
-      dispatch(updateQuantity({ id: product.id, quantity: existingProduct.quantity - 1 }));
-    } else if (existingProduct) {
-      dispatch(removeFromCart(product.id));
+  // Function to decrease quantity (local state)
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1); // Decrease quantity locally
     }
   };
 
-  // Function to increase quantity
-  const increaseQuantity = (products: CartItem) => {
-    const existingProduct = cart.find(item => item.id === products.id);
-    if (existingProduct) {
-      dispatch(updateQuantity({ id: products.id, quantity: existingProduct.quantity + 1 }));
-    }
+  // Function to increase quantity (local state)
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1); // Increase quantity locally
   };
 
   if (!product) {
@@ -110,7 +108,7 @@ const SingleProduct = () => {
                 <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center  rounded-[10px]"/>
               </div>
               <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]  overflow-hidden flex">
-                <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center  rounded-[10px]" />
+              <img src={product.image} alt={product.productName} className="w-[83px] h-[55px] self-center  rounded-[10px]" />
               </div>
               <div className="bg-buttonShop rounded-[10px] w-[76px] h-[80px]  overflow-hidden flex">
                 <img src={product.image} alt={product.productName}  className="w-[83px] h-[55px] self-center rounded-[10px]"/>
@@ -210,18 +208,18 @@ const SingleProduct = () => {
               <div className="flex items-center border border-gray50 rounded-[10px] px-4 py-2 w-[123px] h-[64px] justify-between">
                 <button 
                   className="text-lg font-bold" 
-                  onClick={() => decreaseQuantity(product)}>
+                  onClick={decreaseQuantity}>
                   -
                 </button>
                 <input
                   type="number"
                   className="text-center pl-[10px] border-none font-semibold bg-transparent w-[50px]"
-                  value={cart.find(item => item.id === product.id)?.quantity || 1}
+                  value={quantity}
                   readOnly
                 />
                 <button 
                   className="text-lg font-bold" 
-                  onClick={() => increaseQuantity(product)}>
+                  onClick={increaseQuantity}>
                   +
                 </button>
               </div>
@@ -279,10 +277,10 @@ const SingleProduct = () => {
         </div>
         <div className="w-[1239px] h-[348px] flex justify-between ">
           <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
-            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/sofa5.png" alt="" className="w-[605px] h-[348px]"/>
+            <img src="/fotos-furniro/sofa5.jpg" alt="" className="w-[605px] h-[348px]"/>
           </div>
           <div className="w-[605px] h-[348px] bg-buttonShop rounded-[10px]">
-            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/sofa5.png" alt="" className="w-[605px] h-[348px]"/>
+            <img src="/fotos-furniro/sofa5.jpg" alt="" className="w-[605px] h-[348px]"/>
           </div>
         </div>
       </div>
@@ -311,5 +309,3 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
-
-
