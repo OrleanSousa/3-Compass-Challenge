@@ -7,7 +7,7 @@
     "originalPrice": 3500000,
     "discount": 30,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image1.jpg"
+    "image": "/fotos-furniro/image1.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "Stylish cafe chair",
     "price": 2500000,     
     "isNew": false,
-    "image": "../../public/fotos-furniro/image2.jpg"
+    "image": "/fotos-furniro/image2.jpg"
   },
   {
     "id": 3,
@@ -25,7 +25,7 @@
     "originalPrice": 14000000, 
     "discount": 50,   
     "isNew": false,
-    "image": "../../public/fotos-furniro/image3.jpg"
+    "image": "/fotos-furniro/image3.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "Outdoor bar table and stool",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image4.jpg"
+    "image": "/fotos-furniro/image4.jpg"
   },
   {
     "id": 5,
@@ -41,7 +41,7 @@
     "description": "Night lamp",
     "price": 1500000,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image5.png"
+    "image": "/fotos-furniro/image5.png"
   },
   {
     "id": 6,
@@ -49,7 +49,7 @@
     "description": "Small mug",
     "price": 150000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image6.jpg"
+    "image": "/fotos-furniro/image6.jpg"
   },
   {
     "id": 7,
@@ -59,7 +59,7 @@
     "originalPrice": 14000000,
     "discount": 50,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image7.jpg"
+    "image": "/fotos-furniro/image7.jpg"
   },
   {
     "id": 8,
@@ -67,7 +67,7 @@
     "description": "Minimalist flower pot",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image8.jpg"
+    "image": "/fotos-furniro/image8.jpg"
   },{
     "id": 9,
     "productName": "Syltherine",
@@ -76,7 +76,7 @@
     "originalPrice": 3500000,
     "discount": 30,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image1.jpg"
+    "image": "/fotos-furniro/image1.jpg"
   },
   {
     "id": 10,
@@ -84,7 +84,7 @@
     "description": "Stylish cafe chair",
     "price": 2500000,     
     "isNew": false,
-    "image": "../../public/fotos-furniro/image2.jpg"
+    "image": "/fotos-furniro/image2.jpg"
   },
   {
     "id": 11,
@@ -94,7 +94,7 @@
     "originalPrice": 14000000, 
     "discount": 50,   
     "isNew": false,
-    "image": "../../public/fotos-furniro/image3.jpg"
+    "image": "/fotos-furniro/image3.jpg"
   },
   {
     "id": 12,
@@ -102,7 +102,7 @@
     "description": "Outdoor bar table and stool",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image4.jpg"
+    "image": "/fotos-furniro/image4.jpg"
   },
   {
     "id": 13,
@@ -110,7 +110,7 @@
     "description": "Night lamp",
     "price": 1500000,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image5.png"
+    "image": "/fotos-furniro/image5.png"
   },
   {
     "id": 14,
@@ -118,7 +118,7 @@
     "description": "Small mug",
     "price": 150000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image6.jpg"
+    "image": "/fotos-furniro/image6.jpg"
   },
   {
     "id": 15,
@@ -128,7 +128,7 @@
     "originalPrice": 14000000,
     "discount": 50,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image7.jpg"
+    "image": "/fotos-furniro/image7.jpg"
   },
   {
     "id": 16,
@@ -136,7 +136,7 @@
     "description": "Minimalist flower pot",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image8.jpg"
+    "image": "/fotos-furniro/image8.jpg"
   },{
     "id": 17,
     "productName": "Syltherine",
@@ -145,7 +145,7 @@
     "originalPrice": 3500000,
     "discount": 30,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image1.jpg"
+    "image": "/fotos-furniro/image1.jpg"
   },
   {
     "id": 18,
@@ -153,7 +153,7 @@
     "description": "Stylish cafe chair",
     "price": 2500000,     
     "isNew": false,
-    "image": "../../public/fotos-furniro/image2.jpg"
+    "image": "/fotos-furniro/image2.jpg"
   },
   {
     "id": 19,
@@ -163,7 +163,7 @@
     "originalPrice": 14000000, 
     "discount": 50,   
     "isNew": false,
-    "image": "../../public/fotos-furniro/image3.jpg"
+    "image": "/fotos-furniro/image3.jpg"
   },
   {
     "id": 20,
@@ -171,7 +171,7 @@
     "description": "Outdoor bar table and stool",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image4.jpg"
+    "image": "/fotos-furniro/image4.jpg"
   },
   {
     "id": 21,
@@ -179,7 +179,7 @@
     "description": "Night lamp",
     "price": 1500000,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image5.png"
+    "image": "/fotos-furniro/image5.png"
   },
   {
     "id": 22,
@@ -187,7 +187,7 @@
     "description": "Small mug",
     "price": 150000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image6.jpg"
+    "image": "/fotos-furniro/image6.jpg"
   },
   {
     "id": 23,
@@ -197,7 +197,7 @@
     "originalPrice": 14000000,
     "discount": 50,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image7.jpg"
+    "image": "/fotos-furniro/image7.jpg"
   },
   {
     "id": 24,
@@ -205,7 +205,7 @@
     "description": "Minimalist flower pot",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image8.jpg"
+    "image": "/fotos-furniro/image8.jpg"
   },{
     "id": 25,
     "productName": "Syltherine",
@@ -214,7 +214,7 @@
     "originalPrice": 3500000,
     "discount": 30,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image1.jpg"
+    "image": "/fotos-furniro/image1.jpg"
   },
   {
     "id": 26,
@@ -222,7 +222,7 @@
     "description": "Stylish cafe chair",
     "price": 2500000,     
     "isNew": false,
-    "image": "../../public/fotos-furniro/image2.jpg"
+    "image": "/fotos-furniro/image2.jpg"
   },
   {
     "id": 27,
@@ -232,7 +232,7 @@
     "originalPrice": 14000000, 
     "discount": 50,   
     "isNew": false,
-    "image": "../../public/fotos-furniro/image3.jpg"
+    "image": "/fotos-furniro/image3.jpg"
   },
   {
     "id": 28,
@@ -240,7 +240,7 @@
     "description": "Outdoor bar table and stool",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image4.jpg"
+    "image": "/fotos-furniro/image4.jpg"
   },
   {
     "id": 29,
@@ -248,7 +248,7 @@
     "description": "Night lamp",
     "price": 1500000,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image5.png"
+    "image": "/fotos-furniro/image5.png"
   },
   {
     "id": 30,
@@ -256,7 +256,7 @@
     "description": "Small mug",
     "price": 150000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image6.jpg"
+    "image": "/fotos-furniro/image6.jpg"
   },
   {
     "id": 31,
@@ -266,7 +266,7 @@
     "originalPrice": 14000000,
     "discount": 50,
     "isNew": false,
-    "image": "../../public/fotos-furniro/image7.jpg"
+    "image": "/fotos-furniro/image7.jpg"
   },
   {
     "id": 32,
@@ -274,6 +274,6 @@
     "description": "Minimalist flower pot",
     "price": 500000,
     "isNew": true,
-    "image": "../../public/fotos-furniro/image8.jpg"
+    "image": "/fotos-furniro/image8.jpg"
   }
 ]
