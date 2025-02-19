@@ -12,15 +12,15 @@ const SecondSection = () => {
       <div className={styles.listContainer}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/table.svg" alt="Dining" className={styles.image} />
+            <img src="../../../../public/fotos-furniro/image81.png" alt="Dining" className={styles.image} />
             <p className={styles.text}>Dining</p>
           </li>
           <li className={styles.listItem}>
-            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/Image-living+room.svg" alt="Living" className={styles.image} />
+            <img src="../../../../public/fotos-furniro/image100.png" alt="Living" className={styles.image} />
             <p className={styles.text}>Living</p>
           </li>
           <li className={styles.listItem}>
-            <img src="https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/jar.svg" alt="Bedroom" className={styles.image} />
+            <img src="../../../../public/fotos-furniro/image101.png" alt="Bedroom" className={styles.image} />
             <p className={styles.text}>Bedroom</p>
           </li>
         </ul>

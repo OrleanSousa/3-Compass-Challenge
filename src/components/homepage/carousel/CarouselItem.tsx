@@ -10,45 +10,38 @@ const FeaturedCarousel = () => {
       id: 1,
       title: "Inner Peace",
       description: "Modern and elegant chair for your cafe.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide1.png',
+      image: '../../../../public/fotos-furniro/Rectangle24.jpg',
     },
     {
       id: 2,
       title: "Inner Peace",
       description: "Comfortable and stylish living room design.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide2.png',
+      image: '../../../../public/fotos-furniro/Rectangle25.png',
     },
     {
       id: 3,
       title: "Inner Peace",
       description: "A serene workspace for productivity.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
+      image: '../../../../public/fotos-furniro/Rectangle26.jpg',
     },
     {
       id: 4,
       title: "Inner Peace",
       description: "A serene workspace for productivity.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
+      image: '../../../../public/fotos-furniro/Rectangle26.jpg',
     },
     {
       id: 5,
       title: "Inner Peace",
       description: "A serene workspace for productivity.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide1.png',
+      image: '../../../../public/fotos-furniro/Rectangle25.png',
     },
     {
       id: 6,
       title: "Inner Peace",
       description: "A serene workspace for productivity.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide2.png',
+      image: '../../../../public/fotos-furniro/Rectangle24.jpg',
     },
-    {
-      id: 7,
-      title: "Inner Peace",
-      description: "A serene workspace for productivity.",
-      image: 'https://orlean2024.s3.us-east-2.amazonaws.com/homepageimg/slide3.png',
-    },
-
   ];
 
   return (
